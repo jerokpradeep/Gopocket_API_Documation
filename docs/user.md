@@ -25,38 +25,41 @@ __Response Structure__
     "result": [
         {
             "userId": "<USER_ID>",
-            "actId": "<ACT_ID>",
-            "clientName": "NISHANTH",
+            "actId":  "<ACT_ID>",
+            "clientName": "MAHENDIRAN DURAIRAJ",
             "actStatus": "Activated",
-            "createdDate": "1648275191",
+            "createdDate": "0",
             "createdTime": "0",
-            "mobNo": "1234567890",
-            "email": "*****@gmail.com",
-            "pan": "******769N",
-            "address": "AA",
-            "officeAddress": "NTC",
+            "mobNo": "9629436313",
+            "email": "durairaj_san@yahoo.com",
+            "pan": "******179G",
+            "address": "NO 62 ANUMANTHARAYARKOVIL STRE",
+            "officeAddress": "",
             "city": "",
             "state": "",
             "mandateIdList": [],
             "exchange": [
                 "NSE",
                 "NFO",
-                "CDS",
                 "MCX",
                 "NIPO"
             ],
-            "bankdetails": null,
+            "bankdetails": [
+                {
+                    "bankName": "TAMILNAD MERCANTILE BANK LIMITED",
+                    "accNumber": "***********0498"
+                }
+            ],
             "dpAccountNumber": [
                 {
-                    "dpAccountNumber": "1209280000003265"
+                    "dpAccountNumber": "1209280000008867"
                 }
             ],
             "orders": [
                 "MKT",
                 "LMT",
                 "SL-LMT",
-                "SL-MKT",
-                "DS"
+                "SL-MKT"
             ],
             "branchId": "FLMK",
             "brokerName": "SKY",

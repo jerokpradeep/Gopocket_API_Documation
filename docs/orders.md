@@ -183,10 +183,11 @@ Users can cancel a pending order in the orderbook using the order id of an order
 __Request Structure__
 
 ```
-{
-    "orderNo": "23060200005839"
-}
-
+[
+    {
+        "orderNo": "23060200005839"
+    }
+]
 ```
 
 |Field	| Type	|Description|

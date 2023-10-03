@@ -6,7 +6,7 @@ title: WebSocket streaming
 
 The WebSocket API is the most efficient (speed, latency, resource consumption, and bandwidth) way to receive quotes for instruments across all exchanges during live market hours. A quote consists of fields such as open, high, low, close, last traded price, 5 levels of bid/offer market depth data etc.
 
-In addition, the text messages, alerts, and order updates (the same as the ones available as Postbacks) are also streamed. As the name suggests, the API uses WebSocket protocol to establish a single long standing TCP connection after an HTTP handshake to receive streaming quotes. To connect to the GoPocket WebSocket API, you will need a WebSocket client library in your choice of programming language.
+In addition, the text messages, alerts, and order updates (the same as the ones available as Postbacks) are also streamed. As the name suggests, the API uses WebSocket protocol to establish a single long standing TCP connection after an HTTP handshake to receive streaming quotes. To connect to the Gopocket WebSocket API, you will need a WebSocket client library in your choice of programming language.
 
 You can subscribe for up to 3000 instruments on a single WebSocket connection and receive live quotes for them. Single API key can have upto 3 websocket connections.
 
@@ -19,11 +19,12 @@ Implementing an asynchronous WebSocket client with a binary parser for the marke
 ```
 
 // Javascript example.
-var ws = new WebSocket("wss://ch1.GoPocket.com/NorenWS/");
+
+var ws = new WebSocket("wss://ch1.gopocket.com/NorenWS/");
 
 ```
 
-The WebSocket endpoint is wss://ch1.GoPocket.com/NorenWS/. To establish a connection, you have to pass two query parameters, `api_key` and `access_token`.
+The WebSocket endpoint is wss://ch1.gopocket.com/NorenWS/. To establish a connection, you have to pass two query parameters, `api_key` and `access_token`.
 
 ### Response Structure
 
@@ -43,6 +44,7 @@ Requests are simple JSON messages with two parameters, a (action) and v (value).
 | `subscribe`   | [instrument_token ... ]         |
 | `unsubscribe` | [instrument_token ... ]         |
 | `mode`        | [mode, [instrument_token ... ]] |
+
 
 ```
 // Set INFY (408065) to 'full' mode to
@@ -102,7 +104,7 @@ Each binary message (array of 0 to n individual bytes)--or frame in WebSocket te
 Each individual packet extracted from the message, based on the structure shown in the previous section, can be cast into a data structure as follows. All prices are in paise. For currencies, the int32 price values should be divided by 10000000 to obtain four decimal plaes. For everything else, the price values should be divided by 100.
 
 | Bytes    | Type   |                                                          |
-| -------- | ------ | -------------------------------------------------------- | ----------- |
+| -------- | ------ | -------------------------------------------------------- | 
 | 0 - 4    | int32  | instrument_token                                         |
 | 4 - 8    | int32  | Last traded price (If mode is ltp, the packet ends here) |
 | 8 - 12   | int32  | Last traded quantity                                     |
@@ -117,7 +119,7 @@ Each individual packet extracted from the message, based on the structure shown 
 | 44 - 48  | int32  | Last traded timestamp                                    |
 | 48 - 52  | int32  | Open Interest                                            |
 | 52 - 56  | int32  | Open Interest Day High                                   |
-| 56 - 60  | int32  | Open Inte                                                | est Day Low |
+| 56 - 60  | int32  | Open Inteest Day Low                                     |  
 | 60 - 64  | int32  | Exchange timestamp                                       |
 | 64 - 184 | []byte | Market depth entries                                     |
 

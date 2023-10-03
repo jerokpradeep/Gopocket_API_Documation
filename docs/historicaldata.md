@@ -17,7 +17,7 @@ Retrieve OHLC & Volume of daily candle for desired instrument. The data for any 
 
 ```
 curl --request POST \
---url https://api.GoPocket .in/charts/historical \
+--url https://api.Gopocket .in/charts/historical \
 --header 'Content-Type: application/json' \
 --header 'access-token: JWT' \
 --data '{}'
@@ -85,7 +85,7 @@ Retrieve OHLC & Volume of 1 minute candle for desired instrument for current day
 
 ```
 curl --request POST \
---url https://api.GoPocket.in/charts/intraday \
+--url https://api.Gopocket.in/charts/intraday \
 --header 'Content-Type: application/json' \
 --header 'access-token: ' \
 --data '{}'

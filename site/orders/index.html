@@ -1,0 +1,1744 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../user/">
+      
+      
+        <link rel="next" href="../portfolio/">
+      
+      <link rel="icon" href="../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.0">
+    
+    
+      
+        <title>Orders - GoPocket / API document</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f79797b0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#orders" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="GoPocket / API document" class="md-header__button md-logo" aria-label="GoPocket / API document" data-md-component="logo">
+      
+  <img src="../assets/images/gopocketlogo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GoPocket / API document
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Orders
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="GoPocket / API document" class="md-nav__button md-logo" aria-label="GoPocket / API document" data-md-component="logo">
+      
+  <img src="../assets/images/gopocketlogo.svg" alt="logo">
+
+    </a>
+    GoPocket / API document
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Response%20Structure/" class="md-nav__link">
+        Response Structure
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user/" class="md-nav__link">
+        User
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Orders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Orders
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#place-order" class="md-nav__link">
+    Place Order
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modify-order" class="md-nav__link">
+    Modify Order
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cancel-order" class="md-nav__link">
+    Cancel Order
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-margin" class="md-nav__link">
+    Order Margin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetch-order-book" class="md-nav__link">
+    Fetch Order Book
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetch-trade-book" class="md-nav__link">
+    Fetch Trade Book
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-history" class="md-nav__link">
+    Order History
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portfolio/" class="md-nav__link">
+        Portfolio
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WebSocket%20streaming/" class="md-nav__link">
+        WebSocket streaming
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Webhooks/" class="md-nav__link">
+        Postbacks / Webhooks
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Marketfeeets/" class="md-nav__link">
+        Market Feeds
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../historicaldata/" class="md-nav__link">
+        Historical Market Data
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Trading%20Instruments/" class="md-nav__link">
+        Trading Instruments
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Appendix/" class="md-nav__link">
+        Appendix
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Termsandconditions/" class="md-nav__link">
+        Terms & Conditions
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#place-order" class="md-nav__link">
+    Place Order
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modify-order" class="md-nav__link">
+    Modify Order
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cancel-order" class="md-nav__link">
+    Cancel Order
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-margin" class="md-nav__link">
+    Order Margin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetch-order-book" class="md-nav__link">
+    Fetch Order Book
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetch-trade-book" class="md-nav__link">
+    Fetch Trade Book
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-history" class="md-nav__link">
+    Order History
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="orders">Orders<a class="headerlink" href="#orders" title="Permanent link">&para;</a></h1>
+<p>The order management API lets you place a new order, cancel or modify the pending order, retrieve the order status, trade status, order book &amp; tradebook</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Apis</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td>orders/execute</td>
+<td>Place a new order</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>orders/modify</td>
+<td>Modify a pending order</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>orders/cancel</td>
+<td>Cancel a pending order</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>orders/getmargin</td>
+<td>get order margin</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>info/orderbook</td>
+<td>Retrieve the list of all orders for the day</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>info/tradebook</td>
+<td>Retrieve the list of all trades for the day.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>orderinfo/history</td>
+<td>get order history</td>
+</tr>
+</tbody>
+</table>
+<!-- |GET   |orders/{order-id}| Retrieve the status of an order|
+|GET    |orders/external/{correlation-id} | Retrieve the status of an order by correlation id|
+|GET    |info/tradebook |Retrieve the list of all trades for the day.|
+|GET    |trades/{order-id}  |Retrieve the details of trade by an order id| -->
+
+<h2 id="place-order">Place Order<a class="headerlink" href="#place-order" title="Permanent link">&para;</a></h2>
+<p><strong>Request Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> {
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        &quot;exchange&quot;: &quot;NSE&quot;,
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        &quot;tradingSymbol&quot;: &quot;ZOMATO-EQ&quot;,
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        &quot;qty&quot;: &quot;1&quot;,
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        &quot;price&quot;: &quot;52&quot;,
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        &quot;product&quot;: &quot;MIS&quot;,
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        &quot;transType&quot;: &quot;B&quot;,
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        &quot;priceType&quot;: &quot;L&quot;,
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        &quot;orderType&quot; :&quot;Regular&quot;,
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        &quot;ret&quot;: &quot;DAY&quot;,
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        &quot;source&quot;:&quot;WEB&quot;,
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        &quot;triggerPrice&quot;: &quot;&quot;,
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        &quot;disclosedQty&quot;: &quot;&quot;,
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        &quot;mktProtection&quot;: &quot;&quot;,
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        &quot;target&quot;: &quot;&quot;,
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        &quot;stopLoss&quot;: &quot;&quot;,
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        &quot;trailingPrice&quot;: &quot;&quot;
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    }
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>]
+</code></pre></div>
+<strong>Input parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exchange</td>
+<td>String</td>
+<td>Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)</td>
+</tr>
+<tr>
+<td>tradingSymbol</td>
+<td>String</td>
+<td>Exchange tradingsymbol of the of the instrument</td>
+</tr>
+<tr>
+<td>qty</td>
+<td>String</td>
+<td>Quantity to transact</td>
+</tr>
+<tr>
+<td>price</td>
+<td>String</td>
+<td>The price to execute the order at</td>
+</tr>
+<tr>
+<td>product</td>
+<td>String</td>
+<td>Product code (MIS or CNC or NRML)</td>
+</tr>
+<tr>
+<td>transType</td>
+<td>String</td>
+<td>BUY or SELL</td>
+</tr>
+<tr>
+<td>priceType</td>
+<td>String</td>
+<td>PriceType (Limit , Market , SL , SL-M)</td>
+</tr>
+<tr>
+<td>orderType"</td>
+<td>String</td>
+<td>Order type ( Regular , BO , CO , AMO)</td>
+</tr>
+<tr>
+<td>ret</td>
+<td>String</td>
+<td>Retention type (from LoadRetentionType rest api).These orders state the system to keep the orders pending until the market price reaches the specified limit order price. The various retention orders are: Day or End of Session Order: This is the most commonly used retention type</td>
+</tr>
+<tr>
+<td>source</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>triggerPrice</td>
+<td>String</td>
+<td>The price at which an order should be triggered (SL, SL-M)</td>
+</tr>
+<tr>
+<td>disclosedQty</td>
+<td>String</td>
+<td>Quantity to be disclosed (may be different from actual quantity) to the public exchange orderbook. Only for equitie</td>
+</tr>
+<tr>
+<td>mktProtection</td>
+<td>String</td>
+<td>A market-with-protection order cancels an order to buy or sell stock or other assets and re-submits it as a limit order. A broker might submit a market-with-protection order if the price of the stock has moved unexpectedly and dramatically since the market order was placed.</td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>Target Price is a limit that is the best possible outcome for the stockholder's investment.</td>
+</tr>
+<tr>
+<td>stopLoss</td>
+<td>String</td>
+<td>Stop Loss to minimise the loss in a trade</td>
+</tr>
+<tr>
+<td>trailingPrice</td>
+<td>String</td>
+<td>A trailing stop loss order adjusts the stop price at a fixed percent or number of points below or above the market price of a stock</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    &quot;status&quot;: &quot;Ok&quot;,
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    &quot;message&quot;: &quot;Success&quot;,
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    &quot;result&quot;: [
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        {
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>            &quot;requestTime&quot;: &quot;16:25:08 31-01-2023&quot;,
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>            &quot;orderNo&quot;: &quot;23060200005839&quot;
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        }
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    ]
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>}
+</code></pre></div>
+<strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>requestTime</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>orderNo</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- __Response Structure__
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>{
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    &quot;orderId&quot;: &quot;112111182198&quot;,
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    &quot;orderStatus&quot;: &quot;PENDING&quot;,
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>}
+</code></pre></div>
+__Parameters__
+
+|Field| Type|   Description|
+|-------|-------------------|-------------------------------|
+|orderId    |string |Order specific identification generated by nidhi|
+|orderStatus    |enum string|   Last updated status of the order `TRANSIT` `PENDING` `REJECTED` `CANCELLED` `TRADED` `EXPIRED`| -->
+
+<h2 id="modify-order">Modify Order<a class="headerlink" href="#modify-order" title="Permanent link">&para;</a></h2>
+<p>Using this API one can modify pending order in orderbook. The variables that can be modified are price, quantity, order type &amp; validity. The user has to mention the desired value in fields.</p>
+<p><strong>Request Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    &quot;exchange&quot;: &quot;NSE&quot;,
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    &quot;tradingSymbol&quot;: &quot;ZOMATO-EQ&quot;,
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    &quot;orderNo&quot;: &quot;23060200005839&quot;,
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    &quot;qty&quot;:&quot;5&quot;,
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    &quot;ret&quot;: &quot;DAY&quot;,
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    &quot;priceType&quot;: &quot;MKT&quot;,
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    &quot;transType&quot;: &quot;B&quot;,
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    &quot;price&quot;: &quot;0&quot;,
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    &quot;triggerPrice&quot;: &quot;&quot;,
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    &quot;disclosedQty&quot;: &quot;&quot;,
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    &quot;mktProtection&quot;: &quot;&quot;,
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    &quot;target&quot;: &quot;&quot;,
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    &quot;stopLoss&quot;: &quot;&quot;,
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    &quot;trailingPrice&quot;: &quot;&quot;
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>}
+</code></pre></div>
+<strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exchange</td>
+<td>String</td>
+<td>Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)</td>
+</tr>
+<tr>
+<td>tradingSymbol</td>
+<td>String</td>
+<td>Exchange tradingsymbol of the of the instrument</td>
+</tr>
+<tr>
+<td>qty</td>
+<td>String</td>
+<td>Quantity to transact</td>
+</tr>
+<tr>
+<td>orderNo</td>
+<td>String</td>
+<td>Unique of number code is Order No</td>
+</tr>
+<tr>
+<td>price</td>
+<td>String</td>
+<td>The price to execute the order at</td>
+</tr>
+<tr>
+<td>transType</td>
+<td>String</td>
+<td>BUY or SELL</td>
+</tr>
+<tr>
+<td>priceType</td>
+<td>String</td>
+<td>PriceType (Limit , Market , SL , SL-M)</td>
+</tr>
+<tr>
+<td>orderType"</td>
+<td>String</td>
+<td>Order type ( Regular , BO , CO , AMO)</td>
+</tr>
+<tr>
+<td>triggerPrice</td>
+<td>String</td>
+<td>The price at which an order should be triggered (SL, SL-M)</td>
+</tr>
+<tr>
+<td>disclosedQty</td>
+<td>String</td>
+<td>Quantity to be disclosed (may be different from actual quantity) to the public exchange orderbook. Only for equitie</td>
+</tr>
+<tr>
+<td>mktProtection</td>
+<td>String</td>
+<td>A market-with-protection order cancels an order to buy or sell stock or other assets and re-submits it as a limit order. A broker might submit a market-with-protection order if the price of the stock has moved unexpectedly and dramatically since the market order was placed.</td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>Target Price is a limit that is the best possible outcome for the stockholder's investment.</td>
+</tr>
+<tr>
+<td>stopLoss</td>
+<td>String</td>
+<td>Stop Loss to minimise the loss in a trade</td>
+</tr>
+<tr>
+<td>trailingPrice</td>
+<td>String</td>
+<td>A trailing stop loss order adjusts the stop price at a fixed percent or number of points below or above the market price of a stock</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>{
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    &quot;status&quot;: &quot;Ok&quot;,
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    &quot;message&quot;: &quot;Success&quot;,
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    &quot;result&quot;: [
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        {
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>            &quot;requestTime&quot;: &quot;16:56:01 02-06-2023&quot;,
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>            &quot;orderNo&quot;: &quot;23060200005839&quot;
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        }
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    ]
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>}
+</code></pre></div>
+<strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>requestTime</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>orderNo</td>
+<td>String</td>
+<td>Unique of number code is Order No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cancel-order">Cancel Order<a class="headerlink" href="#cancel-order" title="Permanent link">&para;</a></h2>
+<p>Users can cancel a pending order in the orderbook using the order id of an order. There is no body for request and response for this call. On successful completion of request ‘202 Accepted’ response status code will appear.</p>
+<p><strong>Request Structure</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>{
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    &quot;orderNo&quot;: &quot;23060200005839&quot;
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>}
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>orderNo</td>
+<td>String</td>
+<td>Unique of number code is Order No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Structure</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    {
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>        &quot;status&quot;: &quot;Ok&quot;,
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>        &quot;message&quot;: &quot;Success&quot;,
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>        &quot;result&quot;: [
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>            {
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>                &quot;requestTime&quot;: &quot;17:00:40 02-06-2023&quot;,
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>                &quot;orderNo&quot;: &quot;23060200005839&quot;
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>            }
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>        ]
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    }
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>]  
+</code></pre></div>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>requestTime</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>orderNo</td>
+<td>String</td>
+<td>Unique of number code is Order No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="order-margin">Order Margin<a class="headerlink" href="#order-margin" title="Permanent link">&para;</a></h2>
+<p><strong>Request Structure</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>{
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    &quot;exchange&quot;: &quot;NSE&quot;,
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    &quot;tradingSymbol&quot;: &quot;ZOMATO-EQ&quot;,
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    &quot;qty&quot;: &quot;1&quot;,
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    &quot;price&quot;: &quot;0&quot;,
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    &quot;product&quot;: &quot;MIS&quot;,
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    &quot;transType&quot;: &quot;B&quot;,
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    &quot;priceType&quot;: &quot;MKT&quot;,
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    &quot;orderType&quot;: &quot;Regular&quot;,
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    &quot;triggerPrice&quot;:&quot;&quot;,
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    &quot;stopLoss&quot;:&quot;&quot;
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>}
+</code></pre></div>
+<p><strong>Input parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exchange</td>
+<td>String</td>
+<td>Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)</td>
+</tr>
+<tr>
+<td>tradingSymbol</td>
+<td>String</td>
+<td>Exchange tradingsymbol of the of the instrument</td>
+</tr>
+<tr>
+<td>qty</td>
+<td>String</td>
+<td>Quantity to transact</td>
+</tr>
+<tr>
+<td>price</td>
+<td>String</td>
+<td>Price at which main leg of bracket order will be placed</td>
+</tr>
+<tr>
+<td>product</td>
+<td>String</td>
+<td>Product code (MIS or CNC or NRML)</td>
+</tr>
+<tr>
+<td>tranType</td>
+<td>String</td>
+<td>Buy and Sell</td>
+</tr>
+<tr>
+<td>priceType</td>
+<td>String</td>
+<td>Price type(L or MKT or SL or SL-M)</td>
+</tr>
+<tr>
+<td>orderType"</td>
+<td>String</td>
+<td>Order type ( Regular , BO , CO , AMO)</td>
+</tr>
+<tr>
+<td>triggerPrice</td>
+<td>String</td>
+<td>The price at which an order should be triggered (SL, SL-M)</td>
+</tr>
+<tr>
+<td>stopLoss</td>
+<td>String</td>
+<td>Stop Loss to minimise the loss in a trade</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>{
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    &quot;status&quot;: &quot;Ok&quot;,
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    &quot;message&quot;: &quot;Success&quot;,
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    &quot;result&quot;: [
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>        {
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>            &quot;remarks&quot;: &quot;Insufficient Balance&quot;,
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>            &quot;marginUsed&quot;: 0.0,
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>            &quot;openingBalance&quot;: 0.0,
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>            &quot;requiredMargin&quot;: 18.29,
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>            &quot;availableMargin&quot;: 0.0,
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>            &quot;marginShortfall&quot;: 18.29
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>        }
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>    ]
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>}
+</code></pre></div>
+<strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>remarks</td>
+<td>String</td>
+<td>OOrder description/Tag</td>
+</tr>
+<tr>
+<td>marginUsed</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>orderMargin</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>openingBalance</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>availableMargin</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>marginShortfall</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="fetch-order-book">Fetch Order Book<a class="headerlink" href="#fetch-order-book" title="Permanent link">&para;</a></h2>
+<p><strong>Response Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>{
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    &quot;status&quot;: &quot;Ok&quot;,
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    &quot;message&quot;: &quot;Success&quot;,
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    &quot;result&quot;: [
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>       {
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>            &quot;orderNo&quot;: &quot;23060200003004&quot;,
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>            &quot;userId&quot;: &quot;&lt;USER_ID&gt;&quot;,
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>            &quot;actId&quot;: &quot;&lt;ACT_ID&gt;&quot;,
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>            &quot;exchange&quot;: &quot;NSE&quot;,
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>            &quot;tradingSymbol&quot;: &quot;NIFTYQLITY-EQ&quot;,
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>            &quot;qty&quot;: &quot;1&quot;,
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>            &quot;transType&quot;: &quot;B&quot;,
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>            &quot;ret&quot;: &quot;DAY&quot;,
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>            &quot;token&quot;: &quot;10690&quot;,
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>            &quot;multiplier&quot;: &quot;1&quot;,
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>            &quot;lotSize&quot;: &quot;1&quot;,
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>            &quot;tickSize&quot;: &quot;0.01&quot;,
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>            &quot;price&quot;: &quot;15.48&quot;,
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>            &quot;avgTradePrice&quot;: null,
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>            &quot;disclosedQty&quot;: &quot;0&quot;,
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>            &quot;product&quot;: &quot;MIS&quot;,
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>            &quot;priceType&quot;: &quot;L&quot;,
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>            &quot;orderType&quot;: &quot;Regular&quot;,
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>            &quot;orderStatus&quot;: &quot;REJECTED&quot;,
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>            &quot;fillShares&quot;: &quot;0&quot;,
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>            &quot;exchUpdateTime&quot;: null,
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>            &quot;exchOrderId&quot;: null,
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>            &quot;formattedInsName&quot;: &quot;NIFTYQLITY-EQ&quot;,
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>            &quot;ltp&quot;: null,
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>            &quot;rejectedReason&quot;: &quot;RED:Margin Shortfall:INR 3.10 Available:INR 0.00 for C-G487 [NSE]&quot;,
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>            &quot;triggerPrice&quot;: null,
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>            &quot;mktProtection&quot;: null,
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>            &quot;target&quot;: null,
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>            &quot;stopLoss&quot;: null,
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>            &quot;trailingPrice&quot;: null,
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>            &quot;orderTime&quot;: &quot;12:00:33 02-06-2023&quot;,
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>            &quot;rprice&quot;: &quot;0.00&quot;,
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>            &quot;rqty&quot;: &quot;0&quot;
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>        },
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>    ]
+<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a>}
+</code></pre></div>
+<strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>orderNo</td>
+<td>String</td>
+<td>Order Number is defined as Unique number it can be generated while placing the order</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>String</td>
+<td>The unique, permanent user ID registered with the broker</td>
+</tr>
+<tr>
+<td>actId</td>
+<td>String</td>
+<td>The unique, permanent user ID registered with the broker</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>String</td>
+<td>Exchange (NSE or BSE or NFO or MCX)</td>
+</tr>
+<tr>
+<td>tradingSymbol</td>
+<td>String</td>
+<td>Exchange tradingsymbol of the of the instrument</td>
+</tr>
+<tr>
+<td>qty</td>
+<td>String</td>
+<td>Quantity to transact</td>
+</tr>
+<tr>
+<td>tranType</td>
+<td>String</td>
+<td>Buy and Sell</td>
+</tr>
+<tr>
+<td>ret</td>
+<td>String</td>
+<td>Retention type (from LoadRetentionType rest api).These orders state the system to keep the orders pending until the market price reaches the specified limit order price. The various retention orders are: Day or End of Session Order: This is the most commonly used retention type</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details</td>
+</tr>
+<tr>
+<td>priceType</td>
+<td>String</td>
+<td>PriceType (Limit , Market , SL , SL-M)</td>
+</tr>
+<tr>
+<td>ret</td>
+<td>String</td>
+<td>Retention type (from LoadRetentionType rest api).These orders state the system to keep the orders pending until the market price reaches the specified limit order price. The various retention orders are: Day or End of Session Order: This is the most commonly used retention type</td>
+</tr>
+<tr>
+<td>multiplier</td>
+<td>String</td>
+<td>The Multiplier Of Scrip</td>
+</tr>
+<tr>
+<td>lotSize</td>
+<td>String</td>
+<td>Quantity of a single lot</td>
+</tr>
+<tr>
+<td>tickSize</td>
+<td>String</td>
+<td>Ticker Size Of The Scrip (in paisa).Tick size is the minimum price change between different bid and offer prices of an asset traded on an exchange platform</td>
+</tr>
+<tr>
+<td>price</td>
+<td>String</td>
+<td>Price at which main leg of bracket order will be placed</td>
+</tr>
+<tr>
+<td>avgTradePrice</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>disclosedQty</td>
+<td>String</td>
+<td>Quantity to be disclosed (may be different from actual quantity) to the public exchange orderbook. Only for equitie</td>
+</tr>
+<tr>
+<td>product</td>
+<td>String</td>
+<td>Product code (MIS or CNC or NRML)</td>
+</tr>
+<tr>
+<td>priceType</td>
+<td>String</td>
+<td>PriceType (Limit , Market , SL , SL-M)</td>
+</tr>
+<tr>
+<td>orderType</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>orderStatus</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fillShares</td>
+<td>String</td>
+<td>The Number of shares got filled</td>
+</tr>
+<tr>
+<td>exchUpdateTime</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>exchOrderId</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>formattedInsName</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>ltp</td>
+<td>String</td>
+<td>Last trade price of the scrip. The price at which the final trade happens between a buyer and a seller</td>
+</tr>
+<tr>
+<td>rejectedReason</td>
+<td>String</td>
+<td>Rejection Reason for the order will be displayed</td>
+</tr>
+<tr>
+<td>triggerPrice</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>mktProtection</td>
+<td>String</td>
+<td>A market-with-protection order cancels an order to buy or sell stock or other assets and re-submits it as a limit order. A broker might submit a market-with-protection order if the price of the stock has moved unexpectedly and dramatically since the market order was placed.</td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>Target Price is a limit that is the best possible outcome for the stockholder's investment.</td>
+</tr>
+<tr>
+<td>stopLoss</td>
+<td>String</td>
+<td>stopLoss</td>
+</tr>
+<tr>
+<td>trailingPrice</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>OrderTime</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>rPrice</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>rQty</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="fetch-trade-book">Fetch Trade Book<a class="headerlink" href="#fetch-trade-book" title="Permanent link">&para;</a></h2>
+<p><strong>Response Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>{
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    &quot;status&quot;: &quot;Ok&quot;,
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    &quot;message&quot;: &quot;Success&quot;,
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    &quot;result&quot;: [
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>        {
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>            &quot;orderNo&quot;: &quot;23061200004704&quot;,
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>            &quot;userId&quot;: &quot;&lt;USER_ID&gt;&quot;,
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>            &quot;actId&quot;: &quot;&lt;ACT_ID&gt;&quot;,
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>            &quot;exchange&quot;: &quot;NSE&quot;,
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>            &quot;ret&quot;: &quot;DAY&quot;,
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>            &quot;product&quot;: &quot;MIS&quot;,
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>            &quot;orderType&quot;: &quot;Regular&quot;,
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>            &quot;priceType&quot;: &quot;MKT&quot;,
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>            &quot;fillId&quot;: &quot;79689595&quot;,
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>            &quot;fillTime&quot;: &quot;12-06-2023 15:15:49&quot;,
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>            &quot;transType&quot;: &quot;S&quot;,
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>            &quot;tradingSymbol&quot;: &quot;SBIN-EQ&quot;,
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>            &quot;qty&quot;: &quot;2&quot;,
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>            &quot;token&quot;: &quot;3045&quot;,
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>            &quot;fillshares&quot;: &quot;2&quot;,
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>            &quot;fillqty&quot;: &quot;2&quot;,
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>            &quot;pricePrecision&quot;: &quot;2&quot;,
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>            &quot;lotSize&quot;: &quot;1&quot;,
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>            &quot;tickSize&quot;: &quot;0.05&quot;,
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>            &quot;price&quot;: &quot;0.00&quot;,
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>            &quot;prcftr&quot;: &quot;1.000000&quot;,
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>            &quot;fillprc&quot;: &quot;578.40&quot;,
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>            &quot;exchUpdateTime&quot;: &quot;12-06-2023 15:15:49&quot;,
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>            &quot;exchOrderId&quot;: &quot;1300000022510042&quot;,
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>            &quot;formattedInsName&quot;: &quot;SBIN-EQ&quot;,
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>            &quot;ltp&quot;: null,
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>            &quot;orderTime&quot;: &quot;15:15:49 12-06-2023&quot;
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>        },
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>    ]
+<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>}
+</code></pre></div>
+<strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>orderNo</td>
+<td>String</td>
+<td>Order Number is defined as Unique number it can be generated while placing the order</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>String</td>
+<td>The unique, permanent user ID registered with the broker</td>
+</tr>
+<tr>
+<td>actId</td>
+<td>String</td>
+<td>The unique, permanent user ID registered with the broker</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>String</td>
+<td>Exchange (NSE or BSE or NFO or MCX)</td>
+</tr>
+<tr>
+<td>ret</td>
+<td>String</td>
+<td>Retention type (from LoadRetentionType rest api).These orders state the system to keep the orders pending until the market price reaches the specified limit order price. The various retention orders are: Day or End of Session Order: This is the most commonly used retention type</td>
+</tr>
+<tr>
+<td>product</td>
+<td>String</td>
+<td>Product code (MIS or CNC or NRML)</td>
+</tr>
+<tr>
+<td>orderType</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>priceType</td>
+<td>String</td>
+<td>PriceType (Limit , Market , SL , SL-M)</td>
+</tr>
+<tr>
+<td>fillID</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fillTime</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>tranType</td>
+<td>String</td>
+<td>Buy and Sell</td>
+</tr>
+<tr>
+<td>tradingSymbol</td>
+<td>String</td>
+<td>Exchange tradingsymbol of the of the instrument</td>
+</tr>
+<tr>
+<td>qty</td>
+<td>String</td>
+<td>Quantity to transact</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details</td>
+</tr>
+<tr>
+<td>fillShares</td>
+<td>String</td>
+<td>The Number of shares got filled</td>
+</tr>
+<tr>
+<td>fillqty</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>pricePrecision</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>lotSize</td>
+<td>String</td>
+<td>Quantity of a single lot</td>
+</tr>
+<tr>
+<td>tickSize</td>
+<td>String</td>
+<td>Ticker Size Of The Scrip (in paisa).Tick size is the minimum price change between different bid and offer prices of an asset traded on an exchange platform</td>
+</tr>
+<tr>
+<td>price</td>
+<td>String</td>
+<td>Price at which main leg of bracket order will be placed</td>
+</tr>
+<tr>
+<td>prcftr</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fillprc</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>exchUpdateTime</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>exchOrderId</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>formattedInsName</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>ltp</td>
+<td>String</td>
+<td>Last trade price of the scrip. The price at which the final trade happens between a buyer and a seller</td>
+</tr>
+<tr>
+<td>OrderTime</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="order-history">Order History<a class="headerlink" href="#order-history" title="Permanent link">&para;</a></h2>
+<p><strong>Request Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>{
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>   &quot;orderNo&quot;: &quot;23060600006062&quot;
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>}
+</code></pre></div>
+<strong>Input parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userId</td>
+<td>String</td>
+<td>The unique, permanent user ID registered with the broker</td>
+</tr>
+<tr>
+<td>orderNo</td>
+<td>String</td>
+<td>Order Number is defined as Unique number it can be generated while placing the order</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Structure</strong></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>{
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    &quot;status&quot;: &quot;Ok&quot;,
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    &quot;message&quot;: &quot;Success&quot;,
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    &quot;result&quot;: [
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>        {
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>            &quot;orderNo&quot;: &quot;23020400000012&quot;,
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>            &quot;userId&quot;: &quot;&lt;USER_ID&gt;&quot;,
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>            &quot;actId&quot;: &quot;&lt;ACT_ID&gt;&quot;,
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>            &quot;exchange&quot;: &quot;NSE&quot;,
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>            &quot;tradingSymbol&quot;: &quot;ZOMATO-EQ&quot;,
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>            &quot;quantity&quot;: &quot;1&quot;,
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>            &quot;transType&quot;: &quot;B&quot;,
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>            &quot;priceType&quot;: &quot;LMT&quot;,
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>            &quot;ret&quot;: &quot;DAY&quot;,
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>            &quot;token&quot;: &quot;5097&quot;,
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>            &quot;pricePrecision&quot;: &quot;2&quot;,
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>            &quot;lotSize&quot;: &quot;1&quot;,
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>            &quot;tickSize&quot;: &quot;0.05&quot;,
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>            &quot;price&quot;: &quot;52.00&quot;,
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>            &quot;avgPrice&quot;: null,
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>            &quot;disclosedQty&quot;: null,
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>            &quot;product&quot;: &quot;I&quot;,
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>            &quot;status&quot;: &quot;OPEN&quot;,
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>            &quot;report&quot;: &quot;AMO received&quot;,
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a>            &quot;fillshares&quot;: null,
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>            &quot;time&quot;: &quot;20:11:42 04-02-2023&quot;,
+<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>            &quot;exchTime&quot;: null,
+<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a>            &quot;remarks&quot;: null,
+<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>            &quot;exchOrderNo&quot;: null
+<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>        }
+<a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>    ]
+<a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>}
+</code></pre></div>
+<strong>parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>orderNo</td>
+<td>String</td>
+<td>Order Number is defined as Unique number it can be generated while placing the order</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>String</td>
+<td>The unique, permanent user ID registered with the broker</td>
+</tr>
+<tr>
+<td>actId</td>
+<td>String</td>
+<td>The unique, permanent user ID registered with the broker</td>
+</tr>
+<tr>
+<td>exchange</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>tradingSymbol</td>
+<td>String</td>
+<td>Exchange tradingsymbol of the of the instrument</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>String</td>
+<td>Quantity to transact</td>
+</tr>
+<tr>
+<td>priceType</td>
+<td>String</td>
+<td>PriceType (Limit , Market , SL , SL-M)</td>
+</tr>
+<tr>
+<td>ret</td>
+<td>String</td>
+<td>Retention type (from LoadRetentionType rest api).These orders state the system to keep the orders pending until the market price reaches the specified limit order price. The various retention orders are: Day or End of Session Order: This is the most commonly used retention type</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details</td>
+</tr>
+<tr>
+<td>pricePrecision</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>lotSize</td>
+<td>String</td>
+<td>Quantity of a single lot</td>
+</tr>
+<tr>
+<td>tickSize</td>
+<td>String</td>
+<td>Ticker Size Of The Scrip (in paisa).Tick size is the minimum price change between different bid and offer prices of an asset traded on an exchange platform</td>
+</tr>
+<tr>
+<td>price</td>
+<td>String</td>
+<td>Price at which main leg of bracket order will be placed</td>
+</tr>
+<tr>
+<td>avgPrice</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>disclosedQty</td>
+<td>String</td>
+<td>Quantity to be disclosed (may be different from actual quantity) to the public exchange orderbook. Only for equitie</td>
+</tr>
+<tr>
+<td>product</td>
+<td>String</td>
+<td>Product code (MIS or CNC or NRML)</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fillshares</td>
+<td>String</td>
+<td>The Number of shares got filled</td>
+</tr>
+<tr>
+<td>time</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>exchTime</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>remarks</td>
+<td>String</td>
+<td>Order description/Tag</td>
+</tr>
+<tr>
+<td>exchOrderNo</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022, Gopocket.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.instant", "navigation.top", "navigation.tracking", "navigation.expand", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../js/tablesort.js"></script>
+      
+    
+  </body>
+</html>

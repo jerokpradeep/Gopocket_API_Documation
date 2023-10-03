@@ -8,15 +8,15 @@ title: Introduction
 
 ![Image](assets/images/intro.svg)
 
-GoPocket OpenAPI 1.0 is a collection of fast, high performing, low complexity and easy to understand trading APIs for you, the retail traders to build state of the art financial platforms which can be used for trading, investment, wealth generation, automation of trading strategies & execute algo based strategies
+Gopocket OpenAPI 1.0 is a collection of fast, high performing, low complexity and easy to understand trading APIs for you, the retail traders to build state of the art financial platforms which can be used for trading, investment, wealth generation, automation of trading strategies & execute algo based strategies
 
 It is a set of REST-like APIs that provide integration with our trading eco-system. You can Execute, Modify and Cancel Orders in real time, Manage Portfolio, access Live Market data feeds and Order status stream, view Funds & Balances, and build much more in the Capital Market space with our Open APIs.
 
-GoPocket APIs offer resource-based URLs that accept JSON or form-encoded requests. The response is returned as JSON-encoded by using Standard HTTP response codes unless explicitly stated otherwise. The service calls are platform independent. To Jumpstart your development, toolkits are available in several Programming languages. Please click here.
+Gopocket APIs offer resource-based URLs that accept JSON or form-encoded requests. The response is returned as JSON-encoded by using Standard HTTP response codes unless explicitly stated otherwise. The service calls are platform independent. To Jumpstart your development, toolkits are available in several Programming languages. Please click here.
 
 ## Libraries & SDKs
 
-Below is a list of pre-built client libraries for GoPocket Open APIs developed in popularly used programming languages that can be used to interact with the APIs without having to make raw HTTP calls
+Below is a list of pre-built client libraries for Gopocket Open APIs developed in popularly used programming languages that can be used to interact with the APIs without having to make raw HTTP calls
 
 - Python library (Official)
 - JAVA SDK (Official)
@@ -27,11 +27,11 @@ Below is a list of pre-built client libraries for GoPocket Open APIs developed i
 
 The Base URL is the common URL used as a prefix for all API calls.
 
-[https://api.gopocket.com/]()
+__https://web.gopocket.in/auth-rest/__
 
 ## API Versions
 
-The current stable version of the GoPocket Open API is 1.0 and was last updated on Feb 1, 2023. All requests go to it by default. It is recommended that a specific version be requested explicitly for production applications as major releases may break older implementations. Major changes in the API will be released with new versions.
+The current stable version of the Gopocket Open API is 1.0 and was last updated on Feb 1, 2023. All requests go to it by default. It is recommended that a specific version be requested explicitly for production applications as major releases may break older implementations. Major changes in the API will be released with new versions.
 
 ## Login
 
@@ -39,35 +39,35 @@ The current stable version of the GoPocket Open API is 1.0 and was last updated 
 
 **Registration as Partner:**
 
-Partner login mechanisms are on-demand APIs provided by GoPocket to build innovative financial products to generate wealth via Investment or Trading such as Algo Trading, Portfolio Management and Trading Products. When the GoPocket customer logs in to Partner’s portal
+Partner login mechanisms are on-demand APIs provided by Gopocket to build innovative financial products to generate wealth via Investment or Trading such as Algo Trading, Portfolio Management and Trading Products. When the Gopocket customer logs in to Partner’s portal
 
 **Registration as a Vendor:**
 
-To register as a Vendor, Please visit [web.gopocket.in](https://web.gopocket.in/)
+To register as a Vendor, Please visit [web.gopocket.in](https://web.gopocket.in/developers/)
 
-1.  Login using your GoPocket credentials.
+1.  Login using your  credentials.
 2.  In the Apps sections, Create a new application.
 3.  Fill out the mandatory details.
 4.  Click "Save" to create a new app.
 5.  An App Code (appCode) and API Secret (apiSecret) will be provided to the Vendor. This code is important and Confidential. DO NOT Share with anyone outside your organization.​
-6.  The App will be activated by GoPocket Admin team after reviewing the details given by the Vendor. The Vendor API access will be provided after necessary approval
+6.  The App will be activated by Gopocket Admin team after reviewing the details given by the Vendor. The Vendor API access will be provided after necessary approval
 
 **Implementation of SSO**
 
-1.  During User login, the Vendor should redirect the GoPocket user to [https://web.gopocket.in/?appcode]()= along with the App Code as shown here in the url.
-2.  User will be asked to login with their GoPocket credentials
+1.  During User login, the Vendor should redirect the Gopocket user to [https://web.gopocket.in/?appcode]()= along with the App Code as shown here in the url.
+2.  User will be asked to login with their Gopocket credentials
 3.  After sucessful login, the user will be redirected to the URL provided by the Vendor (Provisions to provide / update the Redirect URL is provided in the Developers Login) along with User Authorization token (authCode) and User ID (userId).
 4.  The Vendor will save the user authCode, UserId (userId) along with apiSecret to create a checkSum, which is the SHA-256 hash of userId + authCode + apiSecret
-5.  Vendor should send this checkSum to the URL : [https://web.gopocket.in/rest/gopocketAPIService/sso/getUserDetails]() to get the User Session (userSession), which can be used to access all API end points.
+5.  Vendor should send this checkSum to the URL : [https://web.gopocket.in/am/sso/vendor/auth/getUserDetails]() to get the User Session (userSession), which can be used to access all API end points.
 
 ### For Individual Traders
 
-Individual traders can directly get their Access Token from web.GoPocket.co,subject to eligibility. The eligibility criteria to get Access Token is minimum 25 trading orders executed in the last 30days and this is inclusive of Futures, Options, Commodity, Currency & Equity-Intraday. Here's how to get your Access Token:
+Individual traders can directly get their Access Token from web.Gopocket.co,subject to eligibility. The eligibility criteria to get Access Token is minimum 25 trading orders executed in the last 30days and this is inclusive of Futures, Options, Commodity, Currency & Equity-Intraday. Here's how to get your Access Token:
 
-- Login to [web.gopocket.in](https://web.gopocket.in/)
-- Click on My Profile and navigate to '
+- Login to [web.gopocket.in](https://web.gopocket.in)
+- Click on My Profile and navigate to Gopocket login page
 
-**GoPocket Trading APIs and Access'**
+**Gopocket Trading APIs and Access'**
 
 ## Rate Limit
 
@@ -146,7 +146,7 @@ Content-Type: application/json
 All GET and DELETE request parameters go as query parameters, and POST and PUT parameters as form-encoded. User has to input an access token in the header for every request.
 ``` yaml
 curl --request POST \
---url https://api.GoPocket.co/orders \
+--url https://api..co/orders \
 --header 'Content-Type: application/json' \
 --header 'access-token: JWT' \
 --data '{Request JSON}'
@@ -165,19 +165,19 @@ Error responses come with the error code and message generated internally by the
 
  <!-- ## Version & API Endpoint: 
 
- The current stable version of the GoPocket Open API is 1.0 and was last updated on Feb 1, 2023. All requests go to it by default. It is recommended that a specific version be requested explicitly for production applications as major releases may break older implementations. Major changes in the API will be released with new versions.
+ The current stable version of the Gopocket Open API is 1.0 and was last updated on Feb 1, 2023. All requests go to it by default. It is recommended that a specific version be requested explicitly for production applications as major releases may break older implementations. Major changes in the API will be released with new versions.
 
 
 
-__STEP 1:__     [https://auth.GoPocket.co/partner/generate-consent]()
+__STEP 1:__     [https://auth.Gopocket.co/partner/generate-consent]()
 
 Partner need to add partner_id & partner_secret in the header. The response of this flow will have consent-id. Use this consent-id for the next browser based flow.
 
-__STEP 2:__     [https://auth.GoPocket.co/consent-login?consentId=<i>&lt;consentId&gt;</i>]()
+__STEP 2:__     [https://auth.Gopocket.co/consent-login?consentId=<i>&lt;consentId&gt;</i>]()
 
 This flow will terminate on a partner's server with URL *<partner-redirect-url>*?tokenid=*<tokenId>*. Use this token-id in the next GET call.
 
-__STEP 3:__     [https://auth.GoPocket.co/partner/consume-consent?tokenId=<i>&lt;token-Id&gt;</i>]()
+__STEP 3:__     [https://auth.Gopocket.co/partner/consume-consent?tokenId=<i>&lt;token-Id&gt;</i>]()
 
 In this step, you need to add partner_id & partner_secret in header again.
 This flow will end with end user details like ClientId, UCC, PoA status etc..
@@ -185,7 +185,7 @@ This flow will end with end user details like ClientId, UCC, PoA status etc..
 
 **For Individual Traders**
 
-Individual traders can directly get their Access Token from web.GoPocket.co,subject to eligibility. The eligibility criteria to get Access Token is minimum 25 trading orders executed in the last 30days and this is inclusive of Futures, Options, Commodity, Currency & Equity-Intraday. Here's how to get your Access Token:
+Individual traders can directly get their Access Token from web.Gopocket.co,subject to eligibility. The eligibility criteria to get Access Token is minimum 25 trading orders executed in the last 30days and this is inclusive of Futures, Options, Commodity, Currency & Equity-Intraday. Here's how to get your Access Token:
 
 
 * Python library (Official)
@@ -201,7 +201,7 @@ Individual traders can directly get their Access Token from web.GoPocket.co,subj
 All GET and DELETE request parameters go as query parameters, and POST and PUT parameters as form-encoded. User has to input an access token in the header for every request.
 ``` yaml
 curl --request POST \
---url https://api.GoPocket.co/orders \
+--url https://api.Gopocket.co/orders \
 --header 'Content-Type: application/json' \
 --header 'access-token: JWT' \
 --data '{Request JSON}'

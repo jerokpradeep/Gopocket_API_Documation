@@ -20,23 +20,23 @@
 # Project information
 
 site_name: GoPocket / API document
-site_url: https://www.GoPocket.com
-site_author:
-site_description: >-
-  Create a branded static site from a set of Markdown files to host the
-  documentation of GoPocket api doc
+# site_url: https://www.GoPocket/docs.com
+# site_author:
+# site_description: >-
+#   Create a branded static site from a set of Markdown files to host the
+#   documentation of Gopocket api docs
 
 # Repository
 # repo_name: squidfunk/mkdocs-material
 # repo_url: https://github.com/squidfunk/mkdocs-material
 
 # Copyright
-copyright: Copyright &copy; 2022, GoPocket.
+copyright: Copyright &copy; 2022, Gopocket.
 
 # Configuration
 theme:
   name: material
-  logo: assets/images/logo.svg
+  logo: ./assets/images/gopocketlogo.svg
   features:
     - content.code.copy
     # - announce.dismiss
@@ -75,7 +75,7 @@ theme:
   font:
     text: Inter
     code: Roboto Mono
-  favicon: assets/images/MicrosoftTeams-image (4).png
+  favicon: ./assets/favicon.png
   icon:
     logo: logo
 extra_css:
@@ -168,7 +168,7 @@ nav:
   - Historical Market Data: historicaldata.md
   - Trading Instruments: Trading Instruments.md
   - Appendix: Appendix.md
-  - Terms & Conditions: Terms&conditions.md
+  - Terms & Conditions: Termsandconditions.md
 
   # - Annexure: annexure.md
   # - Reference: reference.md
@@ -211,7 +211,7 @@ nav:
   #     - setup/extensions/index.md
   #     - Python Markdown: setup/extensions/python-markdown.md
   #     - Python Markdown Extensions: setup/extensions/python-markdown-extensions.md
-  # - Reference:
+  #   - Reference:
   #   - reference/index.md
   #   - Admonitions: reference/admonitions.md
   #   - Annotations: reference/annotations.md
@@ -242,6 +242,7 @@ nav:
   #     - blog/posts/the-past-present-and-future.md
   #     - blog/posts/excluding-content-from-search.md
   #     - blog/posts/search-better-faster-smaller.md
+  
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
   - js/tablesort.js

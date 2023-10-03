@@ -4,6 +4,7 @@ title: Response Structure
 
 
 <!-- # Login
+
 ## For Vendors & FinTech Companies: 
 
 
@@ -37,13 +38,13 @@ All GET and DELETE request parameters go as query parameters, and POST and PUT p
 
 ## Exceptions
 
-HTTP/1.1 200 OK
 
 Content-Type: application/json
 ``` 
 {
-"status":"success",
-"data":{}
+"status":"Ok",
+"message":"Success"
+"result":[]
 }
 
 ```
@@ -51,7 +52,6 @@ All responses from the API server are JSON with the content-type application/jso
 
 ## Errors
 
-HTTP/1.1 500 Server error
 
 Content-Type: application/json
 ``` 
@@ -68,7 +68,7 @@ __Data types__
 
 Values in JSON responses are of types string, int, float, or bool.
 
-Timestamp (datetime) strings in the responses are represented in the form yyyy-mm-dd hh:mm:ss, set under the Indian timezone (IST) — UTC+5.5 hours
+Timestamp (datetime) strings in the responses are represented in the form yyyy-mm-dd hh:ss, set under the Indian timezone (IST) — UTC+5.5 hours
 
 A date string is represented in the form yyyy-mm-dd.
 
