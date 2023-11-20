@@ -30,13 +30,13 @@ __Response Structure__
             "product": "CNC",
             "holdings": [
                 {
-                    "isin": "INE302A01020",
+                    "isin": "INE669E01016",
                     "realizedPnl": "0.0",
-                    "unrealizedPnl": "-574.26",
-                    "netPnl": "-574.26",
-                    "netQty": "3",
-                    "buyPrice": "191.42",
-                    "holdQty": "0",
+                    "unrealizedPnl": "-236.09999",
+                    "netPnl": "-236.09999",
+                    "netQty": "30",
+                    "buyPrice": "7.87",
+                    "holdQty": "30",
                     "dpQty": "0",
                     "benQty": "0",
                     "unpledgedQty": "0",
@@ -45,21 +45,22 @@ __Response Structure__
                     "btstQty": "0",
                     "usedQty": "0",
                     "tradedQty": "0",
-                    "sellableQty": "0",
+                    "sellableQty": "30",
                     "authQty": "0",
                     "sellAmount": "0.0",
+                    "authFlag": false,
                     "symbol": [
                         {
                             "exchange": "NSE",
-                            "token": "676",
-                            "tradingSymbol": "EXIDEIND-EQ",
-                            "pdc": "258.9",
-                            "ltp": "258.9"
+                            "token": "14366",
+                            "tradingSymbol": "IDEA-EQ",
+                            "pdc": "13.95",
+                            "ltp": "13.95"
                         },
                         {
                             "exchange": "BSE",
-                            "token": "500086",
-                            "tradingSymbol": "EXIDEIND",
+                            "token": "532822",
+                            "tradingSymbol": "IDEA",
                             "pdc": "0",
                             "ltp": "0"
                         }
@@ -69,6 +70,7 @@ __Response Structure__
         }
     ]
 }
+
 
 ```
 
@@ -183,7 +185,7 @@ __Request Structure__
 
 ```
 {
-    "ClientId": "1000000009",
+    "ClientId": "<client_ID>",
     "fromProductType":"INTRADAY",
     "exchangeSegment":"NSE_EQ",
     "positionType":"LONG",

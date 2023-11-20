@@ -162,7 +162,6 @@ nav:
   - User: user.md
   - Orders: orders.md
   - Portfolio: portfolio.md
-  - WebSocket streaming: WebSocket streaming.md
   - Postbacks / Webhooks: Webhooks.md
   - Market Feeds: Marketfeeets.md
   - Historical Market Data: historicaldata.md

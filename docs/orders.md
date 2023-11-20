@@ -8,19 +8,16 @@ title: Orders
 
 The order management API lets you place a new order, cancel or modify the pending order, retrieve the order status, trade status, order book & tradebook
                                                              
-|Type	| Apis|Details	 |
-|-------|------|-------------|
-| POST	|orders/execute     |	Place a new order|
-| POST	|orders/modify|	Modify a pending order|
-| POST	|orders/cancel|	Cancel a pending order|
-| POST | orders/getmargin     | get order margin                            |
-| GET	|info/orderbook|	Retrieve the list of all orders for the day|
-| GET    |info/tradebook	|Retrieve the list of all trades for the day.|
-| POST | orderinfo/history   | get order history                           |
-<!-- |GET	|orders/{order-id}|	Retrieve the status of an order|
-|GET	|orders/external/{correlation-id} |	Retrieve the status of an order by correlation id|
-|GET    |info/tradebook	|Retrieve the list of all trades for the day.|
-|GET	|trades/{order-id}	|Retrieve the details of trade by an order id| -->
+|Type	| Apis |                     Details	 |
+|-------|------|---------------------------------|
+| POST	|orders/execute     |Place a new order        |
+| POST	|orders/modify      |Modify a pending order   |
+| POST	|orders/cancel      |Cancel a pending order   |
+| POST  | orders/getmargin  |get order margin         |
+| GET	|info/orderbook     |Retrieve the list of all orders for the day|
+| GET   |info/tradebook     |Retrieve the list of all trades for the day.|
+| POST  | info/history      | get order history       |
+
 
 ##  Place Order
 
@@ -50,17 +47,17 @@ __Request Structure__
 ```
 __Input parameters__
 
-|Field	|           Type	|                    Description|
+|Field	|           Type	|        Description            |
 |-------|-------------------|-------------------------------|
-|exchange     |String|  Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)  |                
+|exchange     |String |  Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)  |                
 |tradingSymbol|String |Exchange tradingsymbol of the of the instrument  |                                   
-|qty          |String|Quantity to transact       |             
-|price        |String|The price to execute the order at|                
-|product      |String|Product code (MIS or CNC or NRML) |                 
-|transType    |String|BUY or SELL  |                
-|priceType    |String|PriceType (Limit , Market , SL , SL-M)       |                   
-|orderType"   |String|Order type ( Regular , BO , CO , AMO)       |                         
-|ret          |String|Retention type (from LoadRetentionType rest api).These orders state the system to keep the orders pending until the market price reaches the specified limit order price. The various retention orders are: Day or End of Session Order: This is the most commonly used retention type       |               
+|qty          |String |Quantity to transact       |             
+|price        |String |The price to execute the order at|                
+|product      |String |Product code (MIS or CNC or NRML) |                 
+|transType    |String |BUY or SELL  |                
+|priceType    |String |PriceType (Limit , Market , SL , SL-M)       |                   
+|orderType"   |String |Order type ( Regular , BO , CO , AMO)       |                         
+|ret          |String |Retention type (from LoadRetentionType rest api).These orders state the system to keep the orders pending until the market price reaches the specified limit order price. The various retention orders are: Day or End of Session Order: This is the most commonly used retention type |               
 |source       |String|       |                 
 |triggerPrice |String|The price at which an order should be triggered (SL, SL-M)       |                     
 |disclosedQty |String|Quantity to be disclosed (may be different from actual quantity) to the public exchange orderbook. Only for equitie       |                     
@@ -72,16 +69,18 @@ __Input parameters__
 __Response Structure__
 
 ```
-{
-    "status": "Ok",
-    "message": "Success",
-    "result": [
-        {
-            "requestTime": "16:25:08 31-01-2023",
-            "orderNo": "23060200005839"
-        }
-    ]
-}
+[
+    {
+        "status": "Ok",
+        "message": "Success",
+        "result": [
+            {
+                "requestTime": "12:57:31 15-11-2023",
+                "orderNo": "23111500003840"
+            }
+        ]
+    }
+]
 ```
 __Parameters__
 
@@ -161,8 +160,8 @@ __Response Structure__
     "message": "Success",
     "result": [
         {
-            "requestTime": "16:56:01 02-06-2023",
-            "orderNo": "23060200005839"
+            "requestTime": "13:12:28 15-11-2023",
+            "orderNo": "23111500003987"
         }
     ]
 }
@@ -185,13 +184,21 @@ __Request Structure__
 ```
 [
     {
-        "orderNo": "23060200005839"
+        "status": "Ok",
+        "message": "Success",
+        "result": [
+            {
+                "requestTime": "13:14:55 15-11-2023",
+                "orderNo": "23111500003987"
+            }
+        ]
     }
 ]
 ```
 
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
+|requestTime	|String	|Unique of number code is Order No|
 |orderNo	|String	|Unique of number code is Order No|
 
 __Response Structure__
@@ -238,7 +245,7 @@ __Request Structure__
 
 ```
 
-__Input parameters__
+__Parameters__
 
 
 | Field         | Type   | Description                                                |
@@ -259,29 +266,31 @@ __Response Structure__
 
 ```
 {
-    "status": "Ok",
-    "message": "Success",
-    "result": [
-        {
+    "status": "Ok",
+    "message": "Success",
+    "result": [
+        {
             "remarks": "Insufficient Balance",
             "marginUsed": 0.0,
             "openingBalance": 0.0,
-            "requiredMargin": 18.29,
+            "requiredMargin": 3.69,
             "availableMargin": 0.0,
-            "marginShortfall": 18.29
+            "marginShortfall": 3.69
         }
-    ]
+    ]
 }
 
 ```
-__Parameters__
+
+ __Parameters__
+
 
 | Field       | Type   | Description            |
 | ----------- | ------ | ---------------------- |
 | remarks     | String | OOrder description/Tag |
 | marginUsed  | String |                        |
-| orderMargin | String |                        |
 | openingBalance | String |                     |
+| requiredMargin | String |                        |
 | availableMargin | String |                    |
 | marginShortfall | String |                    |
 
@@ -297,21 +306,57 @@ __Response Structure__
     "message": "Success",
     "result": [
        {
-            "orderNo": "23060200003004",
+            "orderNo": "23111500003987",
             "userId": "<USER_ID>",
-            "actId": "<ACT_ID>",
+            "actId":  "<ACT_ID>",
             "exchange": "NSE",
-            "tradingSymbol": "NIFTYQLITY-EQ",
+            "tradingSymbol": "IDEA-EQ",
             "qty": "1",
             "transType": "B",
             "ret": "DAY",
-            "token": "10690",
+            "token": "14366",
             "multiplier": "1",
             "lotSize": "1",
-            "tickSize": "0.01",
-            "price": "15.48",
+            "tickSize": "0.05",
+            "price": "0.00",
             "avgTradePrice": null,
-            "disclosedQty": "0",
+            "disclosedQty": "3",
+            "product": "MIS",
+            "priceType": "MKT",
+            "orderType": "Regular",
+            "orderStatus": "REJECTED",
+            "fillShares": "0",
+            "exchUpdateTime": null,
+            "exchOrderId": null,
+            "formattedInsName": "IDEA-EQ",
+            "ltp": null,
+            "rejectedReason": "SAF:order is not open to cancel",
+            "triggerPrice": null,
+            "mktProtection": null,
+            "target": null,
+            "stopLoss": null,
+            "trailingPrice": null,
+            "snoOrderNumber": null,
+            "snoFillid": null,
+            "orderTime": "13:14:55 15-11-2023",
+            "rprice": "0.00",
+            "rqty": "0"
+        },
+        {
+            "userId": "<USER_ID>",
+            "actId":  "<ACT_ID>",
+            "exchange": "NSE",
+            "tradingSymbol": "IDEA-EQ",
+            "qty": "1",
+            "transType": "B",
+            "ret": "DAY",
+            "token": "14366",
+            "multiplier": "1",
+            "lotSize": "1",
+            "tickSize": "0.05",
+            "price": "14.10",
+            "avgTradePrice": null,
+            "disclosedQty": "3",
             "product": "MIS",
             "priceType": "L",
             "orderType": "Regular",
@@ -319,18 +364,20 @@ __Response Structure__
             "fillShares": "0",
             "exchUpdateTime": null,
             "exchOrderId": null,
-            "formattedInsName": "NIFTYQLITY-EQ",
+            "formattedInsName": "IDEA-EQ",
             "ltp": null,
-            "rejectedReason": "RED:Margin Shortfall:INR 3.10 Available:INR 0.00 for C-G487 [NSE]",
+            "rejectedReason": "RED:Margin Shortfall:INR 3.69 Available:INR 0.00 for C-G487 [NSE]",
             "triggerPrice": null,
             "mktProtection": null,
             "target": null,
             "stopLoss": null,
             "trailingPrice": null,
-            "orderTime": "12:00:33 02-06-2023",
+            "snoOrderNumber": null,
+            "snoFillid": null,
+            "orderTime": "13:07:40 15-11-2023",
             "rprice": "0.00",
             "rqty": "0"
-        },
+        }
     ]
 }
 ```
@@ -471,36 +518,64 @@ __Response Structure__
 
 ```
 {
-    "status": "Ok",
-    "message": "Success",
-    "result": [
-        {
-            "orderNo": "23020400000012",
-            "userId": "<USER_ID>",
-            "actId": "<ACT_ID>",
-            "exchange": "NSE",
-            "tradingSymbol": "ZOMATO-EQ",
-            "quantity": "1",
-            "transType": "B",
-            "priceType": "LMT",
-            "ret": "DAY",
-            "token": "5097",
-            "pricePrecision": "2",
-            "lotSize": "1",
-            "tickSize": "0.05",
-            "price": "52.00",
-            "avgPrice": null,
-            "disclosedQty": null,
-            "product": "I",
-            "status": "OPEN",
-            "report": "AMO received",
-            "fillshares": null,
-            "time": "20:11:42 04-02-2023",
-            "exchTime": null,
-            "remarks": null,
-            "exchOrderNo": null
-        }
-    ]
+    "status": "Ok",
+    "message": "Success",
+    "result": [
+        {
+            "orderNo": "23111500004681",
+            "userId": "<USER_ID>",
+            "actId":  "<ACT_ID>",
+            "exchange": "NSE",
+            "tradingSymbol": "IDEA-EQ",
+            "quantity": "1",
+            "transType": "B",
+            "priceType": "MKT",
+            "orderType": "Regular",
+            "ret": "DAY",
+            "token": "14366",
+            "pricePrecision": "2",
+            "lotSize": "1",
+            "tickSize": "0.05",
+            "price": "0.00",
+            "avgPrice": null,
+            "disclosedQty": "3",
+            "product": "MIS",
+            "status": "REJECTED",
+            "report": "Rejected",
+            "fillshares": "0",
+            "time": "13:44:17 15-11-2023",
+            "exchTime": null,
+            "remarks": null,
+            "exchOrderNo": null
+        },
+        {
+            "orderNo": "23111500004681",
+            "userId": "<USER_ID>",
+            "actId":  "<ACT_ID>",
+            "exchange": "NSE",
+            "tradingSymbol": "IDEA-EQ",
+            "quantity": "1",
+            "transType": "B",
+            "priceType": "MKT",
+            "orderType": "Regular",
+            "ret": "DAY",
+            "token": "14366",
+            "pricePrecision": "2",
+            "lotSize": "1",
+            "tickSize": "0.05",
+            "price": "0.00",
+            "avgPrice": null,
+            "disclosedQty": "3",
+            "product": "MIS",
+            "status": "PENDING",
+            "report": "NewAck",
+            "fillshares": "0",
+            "time": "13:44:17 15-11-2023",
+            "exchTime": null,
+            "remarks": null,
+            "exchOrderNo": null
+        }
+    ]
 }
 ```
 __parameters__

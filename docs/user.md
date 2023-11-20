@@ -26,40 +26,37 @@ __Response Structure__
         {
             "userId": "<USER_ID>",
             "actId":  "<ACT_ID>",
-            "clientName": "MAHENDIRAN DURAIRAJ",
+            "clientName": "A****h,
             "actStatus": "Activated",
-            "createdDate": "0",
+            "createdDate": "1648275191",
             "createdTime": "0",
-            "mobNo": "9629436313",
-            "email": "durairaj_san@yahoo.com",
-            "pan": "******179G",
-            "address": "NO 62 ANUMANTHARAYARKOVIL STRE",
-            "officeAddress": "",
+            "mobNo": "123******9",
+            "email": "ak****@gmail.com",
+            "pan": "*******76N",
+            "address": "AA",
+            "officeAddress": "NTC",
             "city": "",
             "state": "",
             "mandateIdList": [],
             "exchange": [
                 "NSE",
                 "NFO",
+                "CDS",
                 "MCX",
                 "NIPO"
             ],
-            "bankdetails": [
-                {
-                    "bankName": "TAMILNAD MERCANTILE BANK LIMITED",
-                    "accNumber": "***********0498"
-                }
-            ],
+            "bankdetails": null,
             "dpAccountNumber": [
                 {
-                    "dpAccountNumber": "1209280000008867"
+                    "dpAccountNumber": "1209280000003265"
                 }
             ],
             "orders": [
                 "MKT",
                 "LMT",
                 "SL-LMT",
-                "SL-MKT"
+                "SL-MKT",
+                "DS"
             ],
             "branchId": "FLMK",
             "brokerName": "SKY",
@@ -132,7 +129,7 @@ __Response Structure__
     "result": [
         {
             "availableMargin": 0.0,
-            "openingBalance": -298.0,
+            "openingBalance": -304.0,
             "marginUsed": 0.0,
             "payin": 0.0,
             "stockPledge": 0.0,
@@ -141,7 +138,7 @@ __Response Structure__
             "exposure": 0.0,
             "span": 0.0,
             "premium": 0.0,
-            "unclearedCash": 298.0,
+            "unclearedCash": 304.0,
             "payout": 0.0
         }
     ]
