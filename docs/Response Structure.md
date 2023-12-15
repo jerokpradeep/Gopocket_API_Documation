@@ -64,13 +64,13 @@ Content-Type: application/json
 ``` 
 A failure response is preceded by the corresponding 40x or 50x HTTP header. The status key in the response envelope contains the value error. The message key contains a textual description of the error and error_type contains the name of the exception. There may be an optional data key with additional payload.
 
-__Data types__
+__Data types:__
 
-Values in JSON responses are of types string, int, float, or bool.
+* Values in JSON responses are of types string, int, float, or boolean.
 
-Timestamp (datetime) strings in the responses are represented in the form yyyy-mm-dd hh:ss, set under the Indian timezone (IST) — UTC+5.5 hours
+* Timestamp (datetime) strings in the responses are represented in the form yyyy-mm-dd hh:ss, set under the Indian timezone (IST) — UTC+5.5 hours.
 
-A date string is represented in the form yyyy-mm-dd.
+* A date string is represented in the form yyyy-mm-dd.
 
 <!-- ### Exceptions and errors
 

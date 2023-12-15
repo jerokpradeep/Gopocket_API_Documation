@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
       
       
 
@@ -57,9 +57,6 @@
   
     <body dir="ltr">
   
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -108,6 +105,9 @@
         </div>
       </div>
     </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -196,6 +196,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
         
@@ -215,6 +216,7 @@
   
   
     
+  
   
   
     <li class="md-nav__item md-nav__item--active">
@@ -259,21 +261,27 @@
       
         <li class="md-nav__item">
   <a href="#response" class="md-nav__link">
-    Response
+    <span class="md-ellipsis">
+      Response
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#exceptions" class="md-nav__link">
-    Exceptions
+    <span class="md-ellipsis">
+      Exceptions
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#errors" class="md-nav__link">
-    Errors
+    <span class="md-ellipsis">
+      Errors
+    </span>
   </a>
   
 </li>
@@ -288,6 +296,7 @@
     
       
       
+  
   
   
   
@@ -310,6 +319,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../orders/" class="md-nav__link">
         
@@ -326,6 +336,7 @@
     
       
       
+  
   
   
   
@@ -348,6 +359,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../Webhooks/" class="md-nav__link">
         
@@ -364,6 +376,7 @@
     
       
       
+  
   
   
   
@@ -386,6 +399,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../historicaldata/" class="md-nav__link">
         
@@ -402,6 +416,7 @@
     
       
       
+  
   
   
   
@@ -424,6 +439,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../Appendix/" class="md-nav__link">
         
@@ -440,6 +456,7 @@
     
       
       
+  
   
   
   
@@ -483,21 +500,27 @@
       
         <li class="md-nav__item">
   <a href="#response" class="md-nav__link">
-    Response
+    <span class="md-ellipsis">
+      Response
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#exceptions" class="md-nav__link">
-    Exceptions
+    <span class="md-ellipsis">
+      Exceptions
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#errors" class="md-nav__link">
-    Errors
+    <span class="md-ellipsis">
+      Errors
+    </span>
   </a>
   
 </li>
@@ -568,10 +591,18 @@ All responses from the API server are JSON with the content-type application/jso
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>}
 </code></pre></div>
 A failure response is preceded by the corresponding 40x or 50x HTTP header. The status key in the response envelope contains the value error. The message key contains a textual description of the error and error_type contains the name of the exception. There may be an optional data key with additional payload.</p>
-<p><strong>Data types</strong></p>
-<p>Values in JSON responses are of types string, int, float, or bool.</p>
-<p>Timestamp (datetime) strings in the responses are represented in the form yyyy-mm-dd hh:ss, set under the Indian timezone (IST) — UTC+5.5 hours</p>
+<p><strong>Data types:</strong></p>
+<ul>
+<li>
+<p>Values in JSON responses are of types string, int, float, or boolean.</p>
+</li>
+<li>
+<p>Timestamp (datetime) strings in the responses are represented in the form yyyy-mm-dd hh:ss, set under the Indian timezone (IST) — UTC+5.5 hours.</p>
+</li>
+<li>
 <p>A date string is represented in the form yyyy-mm-dd.</p>
+</li>
+</ul>
 <!-- ### Exceptions and errors
 
 In addition to the 40x and 50x headers, error responses come with the name of the exception generated internally by the API server. You can define corresponding exceptions in your language or library, and raise them by doing a switch on the returned exception name.
@@ -603,11 +634,22 @@ Content-Type: application/json
 
 
 
+
+
+  
+  
+
+
+
+
+
+
                 
               </article>
             </div>
           
           
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
@@ -625,7 +667,7 @@ Content-Type: application/json
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2022, Gopocket.
+      Copyright &copy; 2023, Gopocket.
     </div>
   
   
@@ -649,7 +691,7 @@ Content-Type: application/json
     <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "content.tooltips", "navigation.indexes", "navigation.sections", "navigation.instant", "navigation.top", "navigation.tracking", "navigation.expand", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       

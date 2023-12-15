@@ -41,7 +41,7 @@ curl --request POST \
 | Field                               | Field Type   | Description                                                                                                                     |
 | ----------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------- |
 | symbol `required`                   | string       | Symbol of the instrument.                                                                                                       |
-| exchangeSegment `required`          | enum string  | Exchange & Segment. `NSE_EQ` `NSE_FNO` `NSE_CURRENCY` `BSE_EQ` `MCX_COMM` `IDX_I`                                               |
+| exchangeSegment `required`          | enum string  | Exchange & Segment. `NSE_EQ` `NSE_FNO` `NSE_CURRENCY`  `MCX_COMM` `IDX_I`                                               |
 | instrument `required`               | enum string  | Instrument type of the scrip . Refer here `EQUITY` `FUTCOM` `FUTCUR` `FUTIDX` `FUTSTK` `INDEXOPTCUR` `OPTFUT` `OPTIDX` `OPTSTK` |
 | expiryCode `conditionally required` | enum integer | Expiry of the instruments in case of derivatives. Refer here                                                                    |
 | fromDate `required`                 | string       | Start date of the desired range                                                                                                 |
@@ -106,7 +106,7 @@ curl --request POST \
 | Field                      | Field Type  | Description                                                                                                                       |
 | -------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | securityId `required`      | string      | Exchange standard id for each scrip. Refer here                                                                                   |
-| exchangeSegment `required` | enum string | Exchange & Segment `NSE_EQ` `NSE_FNO` `NSE_CURRENCY` `BSE_EQ` `MCX_COMM` `IDX_I`                                                  |
+| exchangeSegment `required` | enum string | Exchange & Segment `NSE_EQ` `NSE_FNO` `NSE_CURRENCY`  `MCX_COMM` `IDX_I`                                                  |
 | instrument `required`      | enum string | Instrument type of the scrip. Refer here `EQUITY` `FUTCOM` `FUTCUR` `FUTIDX` `FUTSTK` `INDEX` `OPTCUR` `OPTFUT` `OPTIDX` `OPTSTK` |
 
 **Response Structure**

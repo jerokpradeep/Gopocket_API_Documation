@@ -31,7 +31,7 @@ site_name: GoPocket / API document
 # repo_url: https://github.com/squidfunk/mkdocs-material
 
 # Copyright
-copyright: Copyright &copy; 2022, Gopocket.
+copyright: Copyright &copy; 2023, Gopocket.
 
 # Configuration
 theme:

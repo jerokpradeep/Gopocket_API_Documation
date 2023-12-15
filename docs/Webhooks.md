@@ -4,10 +4,6 @@ title: Postback (WebHooks)
 
 The Postback API sends a `POST` request with a JSON payload to the registered postback_url of your app when an order's status changes. This enables you to get arbitrary updates to your orders reliably, irrespective of when they happen (`COMPLETE`, `CANCEL`, `REJECTED`, `UPDATE`). An UPDATE postback is triggered when an open order is modified or when there's a partial fill. This can be used to track trades.
 
-!!! Note
-
-This Postback API is meant for platforms and public apps where a single api_key will place orders for multiple users. Only orders placed using the `app's` api_key are notified.
-
 ```
 For individual developers, Postbacks over [WebSocket](websocket.md) is recommended, where, orders placed for a particular user anywhere, for instance, web, mobile, or desktop platforms, are sent.
 
@@ -62,7 +58,7 @@ The JSON payload comes with a checksum, which is the SHA-256 hash of (order_id +
   
 ## Payload attributes
 
-|attribute		        |v                      |
+|attribute		        |Details                |
 |-----------------------|-----------------------|
 |`order_id`             |Unique order ID        |  
 |`order_id`             |Unique order ID        |

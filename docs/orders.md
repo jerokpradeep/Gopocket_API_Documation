@@ -6,7 +6,7 @@ title: Orders
 
 # Orders
 
-The order management API lets you place a new order, cancel or modify the pending order, retrieve the order status, trade status, order book & tradebook
+The order management API lets you place a new order, cancel or modify the pending order, retrieve the order status, trade status, order book & tradebook.
                                                              
 |Type	| Apis |                     Details	 |
 |-------|------|---------------------------------|
@@ -15,7 +15,7 @@ The order management API lets you place a new order, cancel or modify the pendin
 | POST	|orders/cancel      |Cancel a pending order   |
 | POST  | orders/getmargin  |get order margin         |
 | GET	|info/orderbook     |Retrieve the list of all orders for the day|
-| GET   |info/tradebook     |Retrieve the list of all trades for the day.|
+| GET   |info/tradebook     |Retrieve the list of all trades for the day|
 | POST  | info/history      | get order history       |
 
 
@@ -49,14 +49,14 @@ __Input parameters__
 
 |Field	|           Type	|        Description            |
 |-------|-------------------|-------------------------------|
-|exchange     |String |  Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)  |                
+|exchange     |String |  Name of the exchange (NSE, NFO, CDS,  MCX)  |                
 |tradingSymbol|String |Exchange tradingsymbol of the of the instrument  |                                   
 |qty          |String |Quantity to transact       |             
 |price        |String |The price to execute the order at|                
 |product      |String |Product code (MIS or CNC or NRML) |                 
 |transType    |String |BUY or SELL  |                
 |priceType    |String |PriceType (Limit , Market , SL , SL-M)       |                   
-|orderType"   |String |Order type ( Regular , BO , CO , AMO)       |                         
+|orderType   |String |Order type ( Regular , BO , CO , AMO)       |                         
 |ret          |String |Retention type (from LoadRetentionType rest api).These orders state the system to keep the orders pending until the market price reaches the specified limit order price. The various retention orders are: Day or End of Session Order: This is the most commonly used retention type |               
 |source       |String|       |                 
 |triggerPrice |String|The price at which an order should be triggered (SL, SL-M)       |                     
@@ -135,7 +135,7 @@ __Parameters__
 
 |Field	|           Type	|                    Description|
 |-------|-------------------|-------------------------------|
-|exchange     |String|  Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)  |                
+|exchange     |String|  Name of the exchange (NSE, NFO, CDS, MCX)  |                
 |tradingSymbol|String |Exchange tradingsymbol of the of the instrument  |                                   
 |qty          |String|Quantity to transact       |   
 |orderNo          |String|Unique of number code is Order No       |             
@@ -176,29 +176,21 @@ __Parameters__
 
 ##  Cancel Order
 
-Users can cancel a pending order in the orderbook using the order id of an order. There is no body for request and response for this call. On successful completion of request ‘202 Accepted’ response status code will appear.
+Users can cancel a pending order in the orderbook using the order id of an order. There is no body for request and response for this call.
 
 
 __Request Structure__
 
 ```
 [
-    {
-        "status": "Ok",
-        "message": "Success",
-        "result": [
-            {
-                "requestTime": "13:14:55 15-11-2023",
-                "orderNo": "23111500003987"
-            }
-        ]
-    }
+   {
+        "orderNo": "23112300006393"
+   }
 ]
 ```
 
 |Field	| Type	|Description|
 |-------|-------------------|-------------------------------|
-|requestTime	|String	|Unique of number code is Order No|
 |orderNo	|String	|Unique of number code is Order No|
 
 __Response Structure__
@@ -225,7 +217,7 @@ __Parameters__
 |requestTime	|String	||
 |orderNo	|String	|Unique of number code is Order No|
 
-## Order Margin
+## Get Margin
 
 __Request Structure__
 
@@ -250,7 +242,7 @@ __Parameters__
 
 | Field         | Type   | Description                                                |
 | ------------- | ------ | -----------------------------------------------------------|
-| exchange      | String | Name of the exchange (NSE, BSE, NFO, CDS, BCD, MCX)        |
+| exchange      | String | Name of the exchange (NSE, NFO, CDS, MCX)        |
 | tradingSymbol | String | Exchange tradingsymbol of the of the instrument            |
 | qty           | String | Quantity to transact                                       |
 | price         | String | Price at which main leg of bracket order will be placed    |
@@ -287,7 +279,7 @@ __Response Structure__
 
 | Field       | Type   | Description            |
 | ----------- | ------ | ---------------------- |
-| remarks     | String | OOrder description/Tag |
+| remarks     | String | Order description/Tag |
 | marginUsed  | String |                        |
 | openingBalance | String |                     |
 | requiredMargin | String |                        |
@@ -341,42 +333,6 @@ __Response Structure__
             "orderTime": "13:14:55 15-11-2023",
             "rprice": "0.00",
             "rqty": "0"
-        },
-        {
-            "userId": "<USER_ID>",
-            "actId":  "<ACT_ID>",
-            "exchange": "NSE",
-            "tradingSymbol": "IDEA-EQ",
-            "qty": "1",
-            "transType": "B",
-            "ret": "DAY",
-            "token": "14366",
-            "multiplier": "1",
-            "lotSize": "1",
-            "tickSize": "0.05",
-            "price": "14.10",
-            "avgTradePrice": null,
-            "disclosedQty": "3",
-            "product": "MIS",
-            "priceType": "L",
-            "orderType": "Regular",
-            "orderStatus": "REJECTED",
-            "fillShares": "0",
-            "exchUpdateTime": null,
-            "exchOrderId": null,
-            "formattedInsName": "IDEA-EQ",
-            "ltp": null,
-            "rejectedReason": "RED:Margin Shortfall:INR 3.69 Available:INR 0.00 for C-G487 [NSE]",
-            "triggerPrice": null,
-            "mktProtection": null,
-            "target": null,
-            "stopLoss": null,
-            "trailingPrice": null,
-            "snoOrderNumber": null,
-            "snoFillid": null,
-            "orderTime": "13:07:40 15-11-2023",
-            "rprice": "0.00",
-            "rqty": "0"
         }
     ]
 }
@@ -389,13 +345,13 @@ __Parameters__
 |orderNo|    String           |Order Number is defined as Unique number it can be generated while placing the order                      |
 |userId |     String         | The unique, permanent user ID registered with the broker                     |                             
 |actId |       String       | The unique, permanent user ID registered with the broker                     |                                   
-|exchange |     String         |Exchange (NSE or BSE or NFO or MCX)                      |                                
+|exchange |     String         |Exchange (NSE or or NFO or MCX)                      |                                
 |tradingSymbol |  String            |Exchange tradingsymbol of the of the instrument                      |                                      
 |qty |        String      | Quantity to transact                     |                              
 |tranType |      String        | Buy and Sell                     |
 |ret |String	|Retention type (from LoadRetentionType rest api).These orders state the system to keep the orders pending until the market price reaches the specified limit order price. The various retention orders are: Day or End of Session Order: This is the most commonly used retention type|
 |token |     String         | Token of the scrip. Token Number is a unique code given to all companies listed on the exchange. Selected Instrument token number will be displayed under scrip details                     |   
-|priceType |     String         |PriceType (Limit , Market , SL , SL-M)                      |                                
+|priceType |     String         | Price type(L or MKT or SL or SL-M)                         |
 |ret |         String     |Retention type (from LoadRetentionType rest api).These orders state the system to keep the orders pending until the market price reaches the specified limit order price. The various retention orders are: Day or End of Session Order: This is the most commonly used retention type                      |                                
 |multiplier |  String            |  The Multiplier Of Scrip                    |                            
 |lotSize |      String        |  Quantity of a single lot                    |                              
@@ -417,7 +373,9 @@ __Parameters__
 |mktProtection   |     String             | A market-with-protection order cancels an order to buy or sell stock or other assets and re-submits it as a limit order. A broker might submit a market-with-protection order if the price of the stock has moved unexpectedly and dramatically since the market order was placed.                |               
 |target |  String                |Target Price is a limit that is the best possible outcome for the stockholder's investment.                 |                 
 |stopLoss   |   String               |stopLoss                 |              
-|trailingPrice   |   String               |                 |             
+|trailingPrice   |   String               |                 |  
+|snoOrderNumber   |   String               |                 |             
+|snoFillid   |   String               |                 |             
 |OrderTime       |   String               |                 | 
 |rPrice |     String         |                      |                                 
 |rQty |      String        |                      |                    
@@ -472,7 +430,7 @@ __Parameters__
 |orderNo|    String           |Order Number is defined as Unique number it can be generated while placing the order                      |
 |userId |     String         | The unique, permanent user ID registered with the broker                     |                             
 |actId |       String       | The unique, permanent user ID registered with the broker                     |                                   
-|exchange |     String         |Exchange (NSE or BSE or NFO or MCX)             |    
+|exchange |     String         |Exchange (NSE or NFO or MCX)             |    
 |ret |String	|Retention type (from LoadRetentionType rest api).These orders state the system to keep the orders pending until the market price reaches the specified limit order price. The various retention orders are: Day or End of Session Order: This is the most commonly used retention type|
 |product|      String        | Product code (MIS or CNC or NRML)
 |orderType|String|         |Order type ( Regular , BO , CO , AMO)
@@ -503,6 +461,7 @@ __Request Structure__
 
 ```
 {
+   "userId": "G487",
    "orderNo": "23060600006062"
 }
 ```

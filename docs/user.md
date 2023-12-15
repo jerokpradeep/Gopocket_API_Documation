@@ -8,7 +8,7 @@ title: User
 
 |Type	| Apis|Details	 |
 |-------|------|-------------|
-|GET| profile/getclientdetails|    |
+|GET| profile/getclientdetails| To get a clientdetails   |
 |GET	|funds/limits|	Place a new funds|
 
 

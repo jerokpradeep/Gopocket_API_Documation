@@ -8,9 +8,9 @@ title: Terms and Conditions
 
 The following are terms of a legal agreement between you (the customer) and Sky Commodities India Private Limited. 
 
-Sky Commodities India Private Limited, a company incorporated under the Companies Act, 1956 having CIN: U67120TZ2012PTC017885 with its brand name includes (Gopocket, “Gopocket”). We may be referred to as “Gopocket”, “We”, “Our”, or “Us”.
+Sky Commodities India Private Limited, a company incorporated under the Companies Act, 1956 having CIN: U67120TZ2012PTC017885 with its brand name includes (Gopocket). We may be referred to as “Gopocket”, “We”, “Our”, or “Us”.
 
-Sky Commodities India Private Limited is a Trading Member of NSE and MCX and Clearing Member of BSE, registered with Securities &amp; Exchange Board of India (SEBI) with Registration No. INZ000049235 for Cash/Derivatives/Currency Derivatives segments of NSE, BSE &amp; MCX. NSE Member Code: 90221, BSE Clearing Code: 6745 | ARN: 136818, MCX Membership No: 46365. CDSL Depository service via Sky Commodities under SEBI having Registration No: INDP5882021.
+Sky Commodities India Private Limited is a Trading Member of NSE and MCX and Clearing Member of registered with Securities &amp; Exchange Board of India (SEBI) with Registration No. INZ000049235 for Cash/Derivatives/Currency Derivatives segments of NSE, &amp; MCX. NSE Member Code: 90221, Clearing Code: 6745 | ARN: 136818, MCX Membership No: 46365. CDSL Depository service via Sky Commodities under SEBI having Registration No: INDP5882021.
 
 The “Client” is any individual or entity with an exchange approved with a UCC (Unique Client Code) account with Gopocket, able to trade various securities through Gopocket Platform (in compliance with various exchange and SEBI regulations).
 
