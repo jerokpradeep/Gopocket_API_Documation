@@ -10,13 +10,13 @@ The order management API lets you place a new order, cancel or modify the pendin
                                                              
 |Type	| Apis |                     Details	 |
 |-------|------|---------------------------------|
-| POST	|orders/execute     |Place a new order        |
-| POST	|orders/modify      |Modify a pending order   |
-| POST	|orders/cancel      |Cancel a pending order   |
-| POST  | orders/getmargin  |get order margin         |
-| GET	|info/orderbook     |Retrieve the list of all orders for the day|
-| GET   |info/tradebook     |Retrieve the list of all trades for the day|
-| POST  | info/history      | get order history       |
+| POST	|od-rest/orders/execute     |Place a new order        |
+| POST	|od-rest/orders/modify      |Modify a pending order   |
+| POST	|od-rest/orders/cancel     |Cancel a pending order   |
+| POST  |od-rest/orders/getmargin  |get order margin         |
+| GET	|od-rest/info/orderbook    |Retrieve the list of all orders for the day|
+| GET   |od-rest/info/tradebook     |Retrieve the list of all trades for the day|
+| POST  | od-rest/info/history      | get order history       |
 
 
 ##  Place Order

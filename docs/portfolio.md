@@ -10,8 +10,8 @@ This API lets you retrieve holdings and positions in your portfolio.
 
 |Method	|Api                |Detail                         |
 |-------|-------------------|-------------------------------|
-|GET	|	/holdings       |Retrieve the list of long term equity holdings|
-|GET	| /positions	    |Retrieve the list of short term positions|
+|GET	| ho-rest/holdings       |Retrieve the list of long term equity holdings|
+|GET	| po-rest/positions	    |Retrieve the list of short term positions|
 |POST	|/positions/convert	|Convert intraday to long term or long term to intraday |
 
 ## Holdings
