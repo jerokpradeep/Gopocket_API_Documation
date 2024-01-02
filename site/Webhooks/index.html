@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../portfolio/">
-      
-      
-        <link rel="next" href="../Marketfeeets/">
       
       
       <link rel="icon" href="../assets/favicon.png">
@@ -295,100 +291,6 @@
       
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Postbacks / Webhooks
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Postbacks / Webhooks
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#checksum" class="md-nav__link">
-    <span class="md-ellipsis">
-      Checksum
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#payload-attributes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Payload attributes
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Marketfeeets/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Market Feeds
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
   
   
     <li class="md-nav__item">
@@ -397,46 +299,6 @@
   
   <span class="md-ellipsis">
     Historical Market Data
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Trading%20Instruments/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Trading Instruments
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Appendix/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Appendix
   </span>
   
 
@@ -498,15 +360,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#payload-attributes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Payload attributes
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -522,7 +375,7 @@
                   
 
 
-  <h1>Postbacks / Webhooks</h1>
+  <h1>Postback (WebHooks)</h1>
 
 <p>The Postback API sends a <code>POST</code> request with a JSON payload to the registered postback_url of your app when an order's status changes. This enables you to get arbitrary updates to your orders reliably, irrespective of when they happen (<code>COMPLETE</code>, <code>CANCEL</code>, <code>REJECTED</code>, <code>UPDATE</code>). An UPDATE postback is triggered when an open order is modified or when there's a partial fill. This can be used to track trades.</p>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>For individual developers, Postbacks over [WebSocket](websocket.md) is recommended, where, orders placed for a particular user anywhere, for instance, web, mobile, or desktop platforms, are sent.
@@ -568,32 +421,6 @@ The JSON payload is posted as a raw HTTP POST body. You will have to read the ra
 </code></pre></div>
 <h2 id="checksum">Checksum<a class="headerlink" href="#checksum" title="Permanent link">&para;</a></h2>
 <p>The JSON payload comes with a checksum, which is the SHA-256 hash of (order_id + order_timestamp + api_secret). For every Postback you receive, you should compute this checksum at your end and match it with the checksum in the payload. This is to ensure that the update is being POSTed by Kite Connect and not by an unauthorised entity, as only Kite Connect can generate a checksum that contains your api_secret.</p>
-<h2 id="payload-attributes">Payload attributes<a class="headerlink" href="#payload-attributes" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>attribute</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>order_id</code></td>
-<td>Unique order ID</td>
-</tr>
-<tr>
-<td><code>order_id</code></td>
-<td>Unique order ID</td>
-</tr>
-<tr>
-<td>String</td>
-<td>unique oeder id</td>
-</tr>
-</tbody>
-</table>
-<!-- the employ ig the ernm the ate is theone og the employee of the  asyteroms alsh in the flutter obkehst aermn
-
-'akash raja' "this is my project to be connntection to the work of thr  the empolyee in the codifi project oh the ancetos pof the akash raja` -->
 
 
 

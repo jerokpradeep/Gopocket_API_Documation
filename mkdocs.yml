@@ -162,11 +162,9 @@ nav:
   - User: user.md
   - Orders: orders.md
   - Portfolio: portfolio.md
-  - Postbacks / Webhooks: Webhooks.md
-  - Market Feeds: Marketfeeets.md
+  # - Postbacks / Webhooks: Webhooks.md
   - Historical Market Data: historicaldata.md
-  - Trading Instruments: Trading Instruments.md
-  - Appendix: Appendix.md
+  # - Appendix: Appendix.md
   - Terms & Conditions: Termsandconditions.md
 
   # - Annexure: annexure.md

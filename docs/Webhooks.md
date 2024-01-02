@@ -55,19 +55,3 @@ __Sample Payload__
 ## Checksum  
 
 The JSON payload comes with a checksum, which is the SHA-256 hash of (order_id + order_timestamp + api_secret). For every Postback you receive, you should compute this checksum at your end and match it with the checksum in the payload. This is to ensure that the update is being POSTed by Kite Connect and not by an unauthorised entity, as only Kite Connect can generate a checksum that contains your api_secret.
-  
-## Payload attributes
-
-|attribute		        |Details                |
-|-----------------------|-----------------------|
-|`order_id`             |Unique order ID        |  
-|`order_id`             |Unique order ID        |
-|  String               |unique oeder id        |
-
-<!-- the employ ig the ernm the ate is theone og the employee of the  asyteroms alsh in the flutter obkehst aermn
-
-'akash raja' "this is my project to be connntection to the work of thr  the empolyee in the codifi project oh the ancetos pof the akash raja` -->
-
-
-
-

@@ -12,7 +12,7 @@
         <link rel="prev" href="../orders/">
       
       
-        <link rel="next" href="../Webhooks/">
+        <link rel="next" href="../historicaldata/">
       
       
       <link rel="icon" href="../assets/favicon.png">
@@ -365,91 +365,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Webhooks/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Postbacks / Webhooks
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Marketfeeets/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Market Feeds
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../historicaldata/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Historical Market Data
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Trading%20Instruments/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Trading Instruments
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Appendix/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Appendix
   </span>
   
 
@@ -559,17 +479,17 @@
 <tbody>
 <tr>
 <td>GET</td>
-<td>/holdings</td>
+<td>ho-rest/holdings</td>
 <td>Retrieve the list of long term equity holdings</td>
 </tr>
 <tr>
 <td>GET</td>
-<td>/positions</td>
+<td>po-rest/positions</td>
 <td>Retrieve the list of short term positions</td>
 </tr>
 <tr>
 <td>POST</td>
-<td>/positions/convert</td>
+<td>po-rest/positions/conversion.</td>
 <td>Convert intraday to long term or long term to intraday</td>
 </tr>
 </tbody>
@@ -640,127 +560,127 @@
 <tr>
 <td>isin</td>
 <td>String</td>
-<td></td>
+<td>International Securities Identification Number (ISIN) for the asset</td>
 </tr>
 <tr>
 <td>realizedPnl</td>
 <td>String</td>
-<td></td>
+<td>profit or loss realized from transactions</td>
 </tr>
 <tr>
 <td>unrealizedPnl</td>
 <td>String</td>
-<td></td>
+<td>Potential profit or loss</td>
 </tr>
 <tr>
 <td>netPnl</td>
 <td>String</td>
-<td></td>
+<td>Overall net profit or loss</td>
 </tr>
 <tr>
 <td>netQty</td>
 <td>String</td>
-<td>Average buy price</td>
+<td>Net quantity of the asset held</td>
 </tr>
 <tr>
 <td>buyPrice</td>
 <td>String</td>
-<td></td>
+<td>Price at which the asset was acquired</td>
 </tr>
 <tr>
 <td>holdQty</td>
 <td>String</td>
-<td></td>
+<td>Total quantity of the asset held</td>
 </tr>
 <tr>
 <td>dpQty</td>
 <td>String</td>
-<td></td>
+<td>Dematerialized quantity of the asset</td>
 </tr>
 <tr>
 <td>benQty</td>
 <td>String</td>
-<td></td>
+<td>Actual quantity of the asset</td>
 </tr>
 <tr>
 <td>unpledgedQty</td>
 <td>String</td>
-<td></td>
+<td>Quantity of the asset that is not pledged as collateral</td>
 </tr>
 <tr>
 <td>collateralQty</td>
 <td>String</td>
-<td></td>
+<td>Quantity of the asset held as collateral</td>
 </tr>
 <tr>
 <td>brkCollQty</td>
 <td>String</td>
-<td></td>
+<td>Brokerage-related collateral quantity</td>
 </tr>
 <tr>
 <td>btstQty</td>
 <td>String</td>
-<td></td>
+<td>Buy Today, Sell Tomorrow quantity</td>
 </tr>
 <tr>
 <td>usedQty</td>
 <td>String</td>
-<td></td>
+<td>Quantity of the asset used in any transactions</td>
 </tr>
 <tr>
 <td>tradedQty</td>
 <td>String</td>
-<td></td>
+<td>Total quantity of the asset traded</td>
 </tr>
 <tr>
 <td>sellableQty</td>
 <td>String</td>
-<td></td>
+<td>Quantity of the asset available for sale</td>
 </tr>
 <tr>
 <td>authQty</td>
 <td>String</td>
-<td></td>
+<td>Approved quantity for specific actions</td>
 </tr>
 <tr>
 <td>authFlag</td>
 <td>String</td>
-<td></td>
+<td>Authorization flag</td>
 </tr>
 <tr>
 <td>sellAmount</td>
 <td>String</td>
-<td></td>
+<td>Total amount from selling the asset</td>
 </tr>
 <tr>
 <td>Symbol</td>
 <td>Array</td>
-<td></td>
+<td>List of symbols associated with the asset</td>
 </tr>
 <tr>
 <td>exchange</td>
 <td>String</td>
-<td></td>
+<td>Exchange where the asset is traded</td>
 </tr>
 <tr>
 <td>token</td>
 <td>String</td>
-<td></td>
+<td>Token identifier for the asset</td>
 </tr>
 <tr>
 <td>tradingSymbol</td>
 <td>String</td>
-<td></td>
+<td>Trading symbol</td>
 </tr>
 <tr>
 <td>pdc</td>
 <td>String</td>
-<td></td>
+<td>Previous day close price</td>
 </tr>
 <tr>
 <td>ltp</td>
 <td>String</td>
-<td></td>
+<td>Last traded price of the asset</td>
 </tr>
 </tbody>
 </table>
@@ -824,7 +744,7 @@
 <tr>
 <td>exchange</td>
 <td>string</td>
-<td>Exchange standard id for each scrip. Refer here</td>
+<td>Exchange standard id for each scrip</td>
 </tr>
 <tr>
 <td>segment</td>
@@ -854,77 +774,92 @@
 <tr>
 <td>netBuyAvgPrice</td>
 <td>string</td>
-<td></td>
+<td>Net average purchase price per unit considering all buy transactions</td>
 </tr>
 <tr>
 <td>netBuyAvg</td>
 <td>string</td>
-<td></td>
+<td>Net average quantity purchased</td>
 </tr>
 <tr>
 <td>netBuyValue</td>
 <td>string</td>
-<td></td>
+<td>Total value of all buy transactions</td>
 </tr>
 <tr>
 <td>netSellQty</td>
 <td>string</td>
-<td></td>
+<td>Net quantity of the asset sold</td>
 </tr>
 <tr>
 <td>netSellAvgPrice</td>
 <td>string</td>
-<td></td>
+<td>Net average selling price per unit considering all sell transactions</td>
 </tr>
 <tr>
 <td>netSellAvg</td>
 <td>string</td>
-<td></td>
+<td>Net average quantity sold</td>
 </tr>
 <tr>
 <td>netSellValue</td>
 <td>string</td>
-<td></td>
+<td>Total value of all sell transactions</td>
 </tr>
 <tr>
 <td>averagePrice</td>
 <td>string</td>
-<td></td>
+<td>Overall average price of the asset, considering both buy and sell transactions</td>
 </tr>
 <tr>
 <td>ltp</td>
 <td>string</td>
-<td></td>
+<td>Last traded price of the asset</td>
 </tr>
 <tr>
 <td>pnl</td>
 <td>string</td>
-<td></td>
+<td>Overall profit</td>
 </tr>
 <tr>
 <td>mtm</td>
 <td>string</td>
-<td></td>
+<td>Mark-to-market value of the position</td>
 </tr>
 <tr>
 <td>pdc</td>
 <td>string</td>
+<td>Previous day close price</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
 <td></td>
 </tr>
 <tr>
 <td>realizedpnl</td>
 <td>string</td>
+<td>profit or loss realized from transactions</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
 <td></td>
 </tr>
 <tr>
 <td>unrealizedpnl</td>
 <td>string</td>
+<td>Potential profit or loss</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
 <td></td>
 </tr>
 <tr>
 <td>multiplier</td>
 <td>string</td>
-<td></td>
+<td>Multiplier or factor used for the position, if applicable</td>
 </tr>
 <tr>
 <td>lotSize</td>
@@ -985,7 +920,7 @@
 <tr>
 <td>prevProduct</td>
 <td>string</td>
-<td></td>
+<td>Previous product type or category for the transaction</td>
 </tr>
 <tr>
 <td>transType</td>
@@ -994,13 +929,13 @@
 </tr>
 <tr>
 <td>posType</td>
-<td>String</td>
-<td></td>
+<td>string</td>
+<td>Position type, indicating the duration or nature of the position</td>
 </tr>
 <tr>
 <td>orderSource</td>
 <td>string</td>
-<td></td>
+<td>Source or platform through which the order was placed</td>
 </tr>
 </tbody>
 </table>

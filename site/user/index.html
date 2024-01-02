@@ -356,91 +356,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Webhooks/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Postbacks / Webhooks
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Marketfeeets/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Market Feeds
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../historicaldata/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Historical Market Data
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Trading%20Instruments/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Trading Instruments
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Appendix/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Appendix
   </span>
   
 
@@ -540,13 +460,13 @@
 <tbody>
 <tr>
 <td>GET</td>
-<td>profile/getclientdetails</td>
+<td>client-rest/profile/getclientdetails</td>
 <td>To get a clientdetails</td>
 </tr>
 <tr>
 <td>GET</td>
-<td>funds/limits</td>
-<td>Place a new funds</td>
+<td>funds-rest/funds/limits</td>
+<td>Get available funds</td>
 </tr>
 </tbody>
 </table>
@@ -632,77 +552,77 @@
 <tr>
 <td>userId</td>
 <td>String</td>
-<td>The unique, permanent user ID registered with the broker</td>
+<td>The unique, permanent user ID registered</td>
 </tr>
 <tr>
 <td>actId</td>
 <td>String</td>
-<td>The unique, permanent user ID registered with the broker</td>
+<td>The unique, permanent actId registered</td>
 </tr>
 <tr>
 <td>clientName</td>
 <td>String</td>
-<td></td>
+<td>Name of the client in the system</td>
 </tr>
 <tr>
 <td>actStatus</td>
 <td>String</td>
-<td></td>
+<td>Status of the account</td>
 </tr>
 <tr>
 <td>createdDate</td>
 <td>String</td>
-<td></td>
+<td>Date the record was created</td>
 </tr>
 <tr>
 <td>createdTime</td>
 <td>String</td>
-<td></td>
+<td>Time the record was created</td>
 </tr>
 <tr>
 <td>mobNo</td>
 <td>String</td>
-<td></td>
+<td>Mobile number associated with the client</td>
 </tr>
 <tr>
 <td>email</td>
 <td>String</td>
-<td></td>
+<td>Email address of the client</td>
 </tr>
 <tr>
 <td>pan</td>
 <td>String</td>
-<td></td>
+<td>PAN (Permanent Account Number) of the client</td>
 </tr>
 <tr>
 <td>address</td>
 <td>String</td>
-<td></td>
+<td>Residential address of the client</td>
 </tr>
 <tr>
 <td>officeAddress</td>
 <td>String</td>
-<td></td>
+<td>Office address of the client</td>
 </tr>
 <tr>
 <td>city</td>
 <td>String</td>
-<td></td>
+<td>City where the client resides or operates</td>
 </tr>
 <tr>
 <td>state</td>
 <td>String</td>
-<td></td>
+<td>State where the client resides or operates</td>
 </tr>
 <tr>
 <td>mandateIdList</td>
 <td>String</td>
-<td></td>
+<td>List of mandate IDs associated with the client</td>
 </tr>
 <tr>
 <td>exchange</td>
-<td>String</td>
-<td></td>
+<td>List</td>
+<td>List of segments enabled for client</td>
 </tr>
 <tr>
 <td>bankdetails</td>
@@ -712,42 +632,42 @@
 <tr>
 <td>dpAccountNumber</td>
 <td>String</td>
-<td></td>
+<td>Account number related to the Depository Participant</td>
 </tr>
 <tr>
 <td>orders</td>
 <td>String</td>
-<td></td>
+<td>List or details of client's orders</td>
 </tr>
 <tr>
 <td>branchId</td>
 <td>String</td>
-<td></td>
+<td>Identification code for the branch associated</td>
 </tr>
 <tr>
 <td>brokerName</td>
 <td>String</td>
-<td></td>
+<td>Name of the broker or brokerage firm</td>
 </tr>
 <tr>
 <td>products</td>
 <td>String</td>
-<td></td>
+<td>List or details of products offered or associated</td>
 </tr>
 <tr>
 <td>productTypes</td>
 <td>String</td>
-<td></td>
+<td>Types or categories of products</td>
 </tr>
 <tr>
 <td>orderTypes</td>
 <td>String</td>
-<td></td>
+<td>Different classifications or types of orders</td>
 </tr>
 <tr>
 <td>priceTypes</td>
 <td>String</td>
-<td></td>
+<td>Various price-related classifications or types</td>
 </tr>
 </tbody>
 </table>
@@ -788,17 +708,17 @@
 <tr>
 <td>availableMargin</td>
 <td>int</td>
-<td>Account Holder's Available Margin is dispalyed</td>
+<td>Account Holder's Available Margin</td>
 </tr>
 <tr>
 <td>openingBalance</td>
 <td>int</td>
-<td>Account Holder's Opening Balance is displayed</td>
+<td>Account Holder's Opening Balance</td>
 </tr>
 <tr>
 <td>marginUsed</td>
 <td>int</td>
-<td>Account Holder's Margin Used is displayed</td>
+<td>Account Holder's Margin Used</td>
 </tr>
 <tr>
 <td>payin</td>
@@ -808,17 +728,17 @@
 <tr>
 <td>stockPledge</td>
 <td>int</td>
-<td></td>
+<td>Amount or value pledged against stocks</td>
 </tr>
 <tr>
 <td>holdingSellCredit</td>
 <td>int</td>
-<td></td>
+<td>Credit amount related to holdings set for sale</td>
 </tr>
 <tr>
 <td>brokerage</td>
 <td>int</td>
-<td></td>
+<td>Commission or fee charged by the broker</td>
 </tr>
 <tr>
 <td>exposure</td>
@@ -833,7 +753,7 @@
 <tr>
 <td>premium</td>
 <td>int</td>
-<td></td>
+<td>The additional money that investors agree to pay to own a stock</td>
 </tr>
 </tbody>
 </table>

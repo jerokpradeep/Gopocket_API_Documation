@@ -301,15 +301,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#rate-limit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rate Limit
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -405,91 +396,11 @@
   
   
     <li class="md-nav__item">
-      <a href="Webhooks/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Postbacks / Webhooks
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Marketfeeets/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Market Feeds
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="historicaldata/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Historical Market Data
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Trading%20Instruments/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Trading Instruments
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Appendix/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Appendix
   </span>
   
 
@@ -604,15 +515,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#rate-limit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rate Limit
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -676,193 +578,6 @@
 <li>Login to <a href="https://web.gopocket.in">web.gopocket.in</a>.</li>
 <li>Click on My Profile and navigate to Gopocket login page.</li>
 </ul>
-<p><strong>Gopocket Trading APIs and Access:</strong></p>
-<h2 id="rate-limit">Rate Limit<a class="headerlink" href="#rate-limit" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Rate Limit</th>
-<th>Order Apis</th>
-<th>Data Apis</th>
-<th>Non Trading Apis</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Per second</td>
-<td>25</td>
-<td>10 Cash</td>
-<td>100</td>
-</tr>
-<tr>
-<td>Per minute</td>
-<td>250</td>
-<td>1000 &amp; Options</td>
-<td>500</td>
-</tr>
-<tr>
-<td>Per hour</td>
-<td>500</td>
-<td>5000</td>
-<td>1000</td>
-</tr>
-<tr>
-<td>Per day</td>
-<td>5000</td>
-<td>10000</td>
-<td>5000</td>
-</tr>
-</tbody>
-</table>
-<!-- ### For Individual Developers:
-
- __Response Structure__
-
-All GET and DELETE request parameters go as query parameters, and POST and PUT parameters as form-encoded (application/x-www-form-urlencoded) parameters, responses from the API are always JSON.
-
-__Successful request:__
-
-
-HTTP/1.1 200 OK
-
-Content-Type: application/json
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p p-Indicator">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="s">&quot;status&quot;</span><span class="p p-Indicator">:</span><span class="s">&quot;success&quot;</span><span class="p p-Indicator">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="s">&quot;data&quot;</span><span class="p p-Indicator">:{}</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p p-Indicator">}</span>
-</code></pre></div>
-All responses from the API server are JSON with the content-type application/json unless explicitly stated otherwise. A successful 200 OK response always has a JSON response body with a status key with the value success. The data key contains the full response payload.
-
-__Failed request:__
-
-HTTP/1.1 500 Server error
-
-Content-Type: application/json
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">   </span><span class="s">&quot;status&quot;</span><span class="p p-Indicator">:</span><span class="s">&quot;error&quot;</span><span class="p p-Indicator">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="s">&quot;message&quot;</span><span class="p p-Indicator">:</span><span class="s">&quot;Error</span><span class="nv"> </span><span class="s">message&quot;</span><span class="p p-Indicator">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s">&quot;error_type&quot;</span><span class="p p-Indicator">:</span><span class="s">&quot;GeneralException&quot;</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p p-Indicator">}</span>
-</code></pre></div>
-A failure response is preceded by the corresponding 40x or 50x HTTP header. The status key in the response envelope contains the value error. The message key contains a textual description of the error and error_type contains the name of the exception. There may be an optional data key with additional payload.
-
-__Data types__
-
-Values in JSON responses are of types string, int, float, or bool.
-
-Timestamp (datetime) strings in the responses are represented in the form yyyy-mm-dd hh:mm:ss, set under the Indian timezone (IST) — UTC+5.5 hours
-
-A date string is represented in the form yyyy-mm-dd.
-
-### Exceptions and errors
-
-In addition to the 40x and 50x headers, error responses come with the name of the exception generated internally by the API server. You can define corresponding exceptions in your language or library, and raise them by doing a switch on the returned exception name.
-
-__Example__
-
-
-HTTP/1.1 500 Server error
-
-Content-Type: application/json
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p p-Indicator">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">   </span><span class="s">&quot;status&quot;</span><span class="p p-Indicator">:</span><span class="s">&quot;error&quot;</span><span class="p p-Indicator">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="s">&quot;message&quot;</span><span class="p p-Indicator">:</span><span class="s">&quot;Error</span><span class="nv"> </span><span class="s">message&quot;</span><span class="p p-Indicator">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="s">&quot;error_type&quot;</span><span class="p p-Indicator">:</span><span class="s">&quot;GeneralException&quot;</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p p-Indicator">}</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="err">```</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--&gt;</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="l l-Scalar l-Scalar-Plain">&lt;!--</span><span class="w"> </span><span class="c1">## Structure</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="l l-Scalar l-Scalar-Plain">All GET and DELETE request parameters go as query parameters, and POST and PUT parameters as form-encoded. User has to input an access token in the header for every request.</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="l l-Scalar l-Scalar-Plain">``` yaml</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="l l-Scalar l-Scalar-Plain">curl --request POST \</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="l l-Scalar l-Scalar-Plain">--url https://api..co/orders \</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="l l-Scalar l-Scalar-Plain">--header &#39;Content-Type</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">application/json&#39; \</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="l l-Scalar l-Scalar-Plain">--header &#39;access-token</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JWT&#39; \</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="l l-Scalar l-Scalar-Plain">--data &#39;{Request JSON}&#39;</span>
-</code></pre></div>
-
-## Errors
-
-Error responses come with the error code and message generated internally by the system. The sample structure of error response is shown below.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p p-Indicator">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="s">&quot;errorCode&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p p-Indicator">,</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="s">&quot;httpStatus&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p p-Indicator">,</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="s">&quot;internalErrorCode&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p p-Indicator">,</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="s">&quot;internalErrorMessage&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p p-Indicator">}</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--&gt;</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;!--</span><span class="w"> </span><span class="c1">## Version &amp; API Endpoint: </span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The current stable version of the Gopocket Open API is 1.0 and was last updated on Feb 1, 2023. All requests go to it by default. It is recommended that a specific version be requested explicitly for production applications as major releases may break older implementations. Major changes in the API will be released with new versions.</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="l l-Scalar l-Scalar-Plain">__STEP 1:__     [https://auth.Gopocket.co/partner/generate-consent]()</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="l l-Scalar l-Scalar-Plain">Partner need to add partner_id &amp; partner_secret in the header. The response of this flow will have consent-id. Use this consent-id for the next browser based flow.</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="l l-Scalar l-Scalar-Plain">__STEP 2:__     [https://auth.Gopocket.co/consent-login?consentId=&lt;i&gt;&amp;lt;consentId&amp;gt;&lt;/i&gt;]()</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="l l-Scalar l-Scalar-Plain">This flow will terminate on a partner&#39;s server with URL *&lt;partner-redirect-url&gt;*?tokenid=*&lt;tokenId&gt;*. Use this token-id in the next GET call.</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="l l-Scalar l-Scalar-Plain">__STEP 3:__     [https://auth.Gopocket.co/partner/consume-consent?tokenId=&lt;i&gt;&amp;lt;token-Id&amp;gt;&lt;/i&gt;]()</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="l l-Scalar l-Scalar-Plain">In this step, you need to add partner_id &amp; partner_secret in header again.</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="l l-Scalar l-Scalar-Plain">This flow will end with end user details like ClientId, UCC, PoA status etc..</span>
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="l l-Scalar l-Scalar-Plain">**For Individual Traders**</span>
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="l l-Scalar l-Scalar-Plain">Individual traders can directly get their Access Token from web.Gopocket.co,subject to eligibility. The eligibility criteria to get Access Token is minimum 25 trading orders executed in the last 30days and this is inclusive of Futures, Options, Commodity, Currency &amp; Equity-Intraday. Here&#39;s how to get your Access Token</span><span class="p p-Indicator">:</span>
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="err">*</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Python library (Official)</span>
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="l l-Scalar l-Scalar-Plain">* JAVA SDK (Official)</span>
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="l l-Scalar l-Scalar-Plain">* NodeJS SDK</span><span class="w"> </span>
-<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="l l-Scalar l-Scalar-Plain">* C# SDK</span><span class="w"> </span>
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>
-<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
-<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>
-<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>
-<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>
-<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="l l-Scalar l-Scalar-Plain">## Structure</span>
-<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="l l-Scalar l-Scalar-Plain">All GET and DELETE request parameters go as query parameters, and POST and PUT parameters as form-encoded. User has to input an access token in the header for every request.</span>
-<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="l l-Scalar l-Scalar-Plain">``` yaml</span>
-<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="l l-Scalar l-Scalar-Plain">curl --request POST \</span>
-<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a><span class="l l-Scalar l-Scalar-Plain">--url https://api.Gopocket.co/orders \</span>
-<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a><span class="l l-Scalar l-Scalar-Plain">--header &#39;Content-Type</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">application/json&#39; \</span>
-<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a><span class="l l-Scalar l-Scalar-Plain">--header &#39;access-token</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JWT&#39; \</span>
-<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="l l-Scalar l-Scalar-Plain">--data &#39;{Request JSON}&#39;</span>
-</code></pre></div>
-
-## Errors
-
-Error responses come with the error code and message generated internally by the system. The sample structure of error response is shown below.
-``` yaml
-{
-    "errorCode": "",
-    "httpStatus": "",
-    "internalErrorCode": "",
-    "internalErrorMessage": ""
-}
-``` -->
-
-<!--
-
-### Generate API Key
-
-
-# API Overflow
-
-The following diagram depicts the API authentication flow. After receiving the encryption key, user has to generate SHA-256 encrypted key to get User Session ID. To achieve this, the user has to encrypt the combination of User iD, API key and Encryption Key. Sending this to the API will provide a valid Session ID. Use the session ID in authorization header for all further API calls. If there are any issues found, like unauthorized access or invalid session, user can re-generate session id by using the same set of process described above.
-
-
-# API Overflow
-
-Every request except "authentication" should be appended with Authorization header having Bearer token as below -->
 
 
 

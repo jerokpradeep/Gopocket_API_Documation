@@ -6,10 +6,10 @@ title: User
 
 # User
 
-|Type	| Apis|Details	 |
+|Type	| Apis |Details	     |
 |-------|------|-------------|
 |GET    | client-rest/profile/getclientdetails| To get a clientdetails   |
-|GET	| funds-rest/funds/limits|	Place a new funds|
+|GET	| funds-rest/funds/limits|	Get available funds|
 
 
 ## Profile
@@ -89,31 +89,31 @@ __Response Structure__
 __Parameters__
 
 |Field	|Type	|Description|
-|-|-|-|
-|userId          |String |  The unique, permanent user ID registered with the broker  |                                   
-|actId           |String |  The unique, permanent user ID registered with the broker  |                             
-|clientName      |String |           |                           
-|actStatus       |String |           |                       
-|createdDate     |String |           |                                
-|createdTime     |String |           |                                   
-|mobNo           |String |           |                         
-|email           |String |           |                       
-|pan             |String |           |                             
-|address         |String |           |                             
-|officeAddress   |String |           |                                   
-|city            |String |           |                           
-|state           |String |           |                           
-|mandateIdList   |String |           |                                
-|exchange        |String |           |                      
+|-------|--------|-----------|
+|userId          |String |  The unique, permanent user ID registered   |                                   
+|actId           |String |  The unique, permanent actId registered   |                             
+|clientName | String | Name of the client in the system|                         
+|actStatus | String | Status of the account|                     
+|createdDate | String | Date the record was created|                              
+|createdTime | String | Time the record was created|                                 
+|mobNo | String | Mobile number associated with the client|                       
+|email | String | Email address of the client|                     
+|pan | String | PAN (Permanent Account Number) of the client|                           
+|address | String | Residential address of the client|                           
+|officeAddress | String | Office address of the client|                                 
+|city | String | City where the client resides or operates|                         
+|state | String | State where the client resides or operates|                         
+|mandateIdList | String | List of mandate IDs associated with the client|                              
+|exchange | List |List of segments enabled for client|                    
 |bankdetails     |String |Account holder Bank Details like Bank address, bank account number, bank name          |                                       
-|dpAccountNumber |String |           |            
-|orders          |String |           |                                     
-|branchId        |String |           |                                       
-|brokerName      |String |           |                                       
-|products        |String |           |                                   
-|productTypes    |String |           |                                        
-|orderTypes      |String |           |                                         
-|priceTypes      |String |           |                                
+|dpAccountNumber | String | Account number related to the Depository Participant|          
+|orders          | String | List or details of client's orders|                                   
+|branchId        | String | Identification code for the branch associated|                                     
+|brokerName      | String | Name of the broker or brokerage firm|                                     
+|products        | String | List or details of products offered or associated|                                 
+|productTypes    | String | Types or categories of products|                                      
+|orderTypes      | String | Different classifications or types of orders|                                       
+|priceTypes      | String | Various price-related classifications or types|                              
                      
 
 ## Funds
@@ -149,13 +149,13 @@ __Parameters__
 
 |Field	|Type	|Description|
 |-|-|-|
-|availableMargin	|int	|Account Holder's Available Margin is dispalyed|
-|openingBalance	|int	|Account Holder's Opening Balance is displayed|
-|marginUsed	|int	|Account Holder's Margin Used is displayed|
+|availableMargin	|int	|Account Holder's Available Margin |
+|openingBalance	|int	|Account Holder's Opening Balance |
+|marginUsed	|int	|Account Holder's Margin Used |
 |payin	|int	|Payin is the funds transferred by the customer from his bank account into his trading account|
-|stockPledge	|int	||
-|holdingSellCredit	|int	||
-|brokerage	|int	||
+|stockPledge	|int	|  Amount or value pledged against stocks|
+|holdingSellCredit	|int	|Credit amount related to holdings set for sale|
+|brokerage	|int	|Commission or fee charged by the broker|
 |exposure	|int	|The exposure margin is charged over and above the SPAN margin, and is usually done so at the discretion of the broker|
 |span	|int	|SPAN determines margin requirements based on a global assessment of the one-day risk for a trader's account|
-|premium	|int	||
+|premium	|int	|The additional money that investors agree to pay to own a stock|
